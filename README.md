@@ -27,4 +27,4 @@ pm2 startup
 ## 临时调试
 
 1. 修改./src/test.py 中的内容(不用提交到 git)
-2. 终端中执行`./script/test.sh` 或者 VSCode 中使用快捷键`Ctrl` + `Shift` + `B`
+2. 终端中执行`./script/test.sh` 或者 VSCode 中使用快捷键`Ctrl` + `Shift` + `T`
