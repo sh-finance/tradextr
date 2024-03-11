@@ -1,0 +1,702 @@
+[
+  {
+    "period": "2024-02",
+    "msn": "D2RCAUS",
+    "seriesDescription": "Average Cost of Residential Heating Oil in Dollars per Million Btu",
+    "value": "Not Available",
+    "unit": "Dollars per Million Btu"
+  },
+  {
+    "period": "2024-02",
+    "msn": "D2RCOUS",
+    "seriesDescription": "Average Cost of Residential Heating Oil in Dollars per Gallon",
+    "value": "Not Available",
+    "unit": "Dollars per Gallon"
+  },
+  {
+    "period": "2024-02",
+    "msn": "RLUCUUS",
+    "seriesDescription": "Leaded Regular Gasoline, U.S. City Average Retail Price in Dollars per Gallon Including Taxes",
+    "value": "Not Applicable",
+    "unit": "Dollars per Gallon Including Taxes"
+  },
+  {
+    "period": "2024-01",
+    "msn": "ARTCBUS",
+    "seriesDescription": "Asphalt and Road Oil Product Supplied in Trillion Btu",
+    "value": "43.879",
+    "unit": "Trillion Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OPTCBUS",
+    "seriesDescription": "Other Products Supplied in Trillion Btu",
+    "value": "317.856",
+    "unit": "Trillion Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OPROPUS",
+    "seriesDescription": "Other Petroleum Products Refinery and Blender Net Production in Thousand Barrels per Day",
+    "value": "2642.057",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OPPSPUS",
+    "seriesDescription": "Other Products Stocks in Million Barrels",
+    "value": "153.696",
+    "unit": "Million Barrels"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OPIMPUS",
+    "seriesDescription": "Other Petroleum Products Imports in Thousand Barrels per Day",
+    "value": "Not Available",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OPEXPUS",
+    "seriesDescription": "Other Petroleum Products Exports in Thousand Barrels per Day",
+    "value": "Not Available",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OLRIPUS",
+    "seriesDescription": "Other Liquids Refinery and Blender Net Inputs in Thousand Barrels per Day",
+    "value": "1414.723",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGWSPUS",
+    "seriesDescription": "Active Well Service Rig Count in Number of Rigs",
+    "value": "Not Available",
+    "unit": "Number of Rigs"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGVTPUS",
+    "seriesDescription": "Crude Oil and Natural Gas Rotary Rigs in Operation, Vertical Trajectory in Number of Rigs",
+    "value": "12",
+    "unit": "Number of Rigs"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGVFPUS",
+    "seriesDescription": "Crude Oil, Natural Gas, and Dry Wells, Vertical Trajectory, Total Footage Drilled in Thousand Feet",
+    "value": "452",
+    "unit": "Thousand Feet"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGTWPUS",
+    "seriesDescription": "Crude Oil, Natural Gas, and Dry Wells Drilled, Total in Number",
+    "value": "1560",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGTFPUS",
+    "seriesDescription": "Crude Oil, Natural Gas, and Dry Wells, Total Footage Drilled in Thousand Feet",
+    "value": "26114",
+    "unit": "Thousand Feet"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGPFPUS",
+    "seriesDescription": "Crude Oil Wells, Total Footage Drilled  in Thousand Feet",
+    "value": "18268",
+    "unit": "Thousand Feet"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGNRPUS",
+    "seriesDescription": "Crude Oil and Natural Gas Rotary Rigs in Operation, Total in Number of Rigs",
+    "value": "620",
+    "unit": "Number of Rigs"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGNRPON",
+    "seriesDescription": "Crude Oil and Natural Gas Rotary Rigs in Operation, Onshore in Number of Rigs",
+    "value": "601",
+    "unit": "Number of Rigs"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGNRPOF",
+    "seriesDescription": "Crude Oil and Natural Gas Rotary Rigs in Operation, Offshore in Number of Rigs",
+    "value": "20",
+    "unit": "Number of Rigs"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGHRPUS",
+    "seriesDescription": "Crude Oil and Natural Gas Rotary Rigs in Operation, Horizontal Trajectory in Number of Rigs",
+    "value": "561",
+    "unit": "Number of Rigs"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGHFPUS",
+    "seriesDescription": "Crude Oil, Natural Gas, and Dry Wells, Horizontal and Directional Trajectory, Total Footage Drilled in Thousand Feet",
+    "value": "25661",
+    "unit": "Thousand Feet"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGGFPUS",
+    "seriesDescription": "Natural Gas Wells, Total Footage Drilled   in Thousand Feet",
+    "value": "6473",
+    "unit": "Thousand Feet"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGDRPUS",
+    "seriesDescription": "Crude Oil and Natural Gas Rotary Rigs in Operation, Directional Trajectory in Number of Rigs",
+    "value": "48",
+    "unit": "Number of Rigs"
+  },
+  {
+    "period": "2024-01",
+    "msn": "OGDFPUS",
+    "seriesDescription": "Dry Wells, Total Footage Drilled  in Thousand Feet",
+    "value": "1373",
+    "unit": "Thousand Feet"
+  },
+  {
+    "period": "2024-01",
+    "msn": "NLRIPUS",
+    "seriesDescription": "Natural Gas Liquids Refinery and Blender Net Inputs in Thousand Barrels per Day",
+    "value": "631.317",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "NLPRPUS",
+    "seriesDescription": "Natural Gas Liquids Production in Thousand Barrels per Day",
+    "value": "6203.194",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "NGTWPUS",
+    "seriesDescription": "Wells Drilled, Natural Gas in Number",
+    "value": "310",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "NGRCOUS",
+    "seriesDescription": "Average Cost of Residential Natural Gas in Dollars per Thousand Cubic Feet",
+    "value": "Not Available",
+    "unit": "Dollars per Thousand Cubic Feet"
+  },
+  {
+    "period": "2024-01",
+    "msn": "NGRCAUS",
+    "seriesDescription": "Average Cost of Residential Natural Gas in Dollars per Million Btu",
+    "value": "Not Available",
+    "unit": "Dollars per Million Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "NGNRPUS",
+    "seriesDescription": "Natural Gas Rotary Rigs in Operation, Total in Number of Rigs",
+    "value": "119",
+    "unit": "Number of Rigs"
+  },
+  {
+    "period": "2024-01",
+    "msn": "MTPSPUS",
+    "seriesDescription": "Motor Gasoline Stocks (Including Blending Components and Gasohol), End of Period in Million Barrels",
+    "value": "251.437",
+    "unit": "Million Barrels"
+  },
+  {
+    "period": "2024-01",
+    "msn": "MGUCUUS",
+    "seriesDescription": "All Grades of Gasoline, U.S. City Average Retail Price in Dollars per Gallon Including Taxes",
+    "value": "3.353",
+    "unit": "Dollars per Gallon Including Taxes"
+  },
+  {
+    "period": "2024-01",
+    "msn": "MGTCPUS",
+    "seriesDescription": "Motor Gasoline Product Supplied in Thousand Barrels per Day",
+    "value": "8264.29",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "MGTCOUS",
+    "seriesDescription": "Average Cost of Motor Gasoline in Dollars per Gallon",
+    "value": "1.087",
+    "unit": "Dollars per Gallon"
+  },
+  {
+    "period": "2024-01",
+    "msn": "MGTCBUS",
+    "seriesDescription": "Motor Gasoline Product Supplied in Trillion Btu",
+    "value": "1293.518",
+    "unit": "Trillion Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "MGTCAUS",
+    "seriesDescription": "Average Cost of Motor Gasoline in Dollars per Million Btu",
+    "value": "9.044",
+    "unit": "Dollars per Million Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "MGROPUS",
+    "seriesDescription": "Finished Motor Gasoline Refinery and Blender Net Production in Thousand Barrels per Day",
+    "value": "8981.968",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "MGIMPUS",
+    "seriesDescription": "Finished Motor Gasoline Imports in Thousand Barrels per Day",
+    "value": "49.839",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "MGEXPUS",
+    "seriesDescription": "Finished Motor Gasoline Exports in Thousand Barrels per Day",
+    "value": "893.645",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "LUTCPUS",
+    "seriesDescription": "Lubricants Product Supplied in Thousand Barrels per Day",
+    "value": "110.911",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "LUTCBUS",
+    "seriesDescription": "Lubricants Product Supplied in Trillion Btu",
+    "value": "20.853",
+    "unit": "Trillion Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "KSTCPUS",
+    "seriesDescription": "Kerosene Product Supplied in Thousand Barrels per Day",
+    "value": "6.901",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "KSTCBUS",
+    "seriesDescription": "Kerosene Product Supplied in Trillion Btu",
+    "value": "1.213",
+    "unit": "Trillion Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "JFTCPUS",
+    "seriesDescription": "Jet Fuel Product Supplied in Thousand Barrels per Day",
+    "value": "1511.097",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "JFTCBUS",
+    "seriesDescription": "Jet Fuel Product Supplied in Trillion Btu",
+    "value": "265.605",
+    "unit": "Trillion Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "JFROPUS",
+    "seriesDescription": "Jet Fuel Refinery and Blender Net Production in Thousand Barrels per Day",
+    "value": "1677.968",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "JFPSPUS",
+    "seriesDescription": "Jet Fuel Stocks, End of Period in Million Barrels",
+    "value": "40.93",
+    "unit": "Million Barrels"
+  },
+  {
+    "period": "2024-01",
+    "msn": "JFIMPUS",
+    "seriesDescription": "Jet Fuel Imports in Thousand Barrels per Day",
+    "value": "90.677",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "JFEXPUS",
+    "seriesDescription": "Jet Fuel Exports in Thousand Barrels per Day",
+    "value": "212.452",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "HRTWPUS",
+    "seriesDescription": "Crude Oil, Natural Gas, and Dry Wells Drilled, Horizontal and Directional Trajectory in Number",
+    "value": "1436",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "HLTCPUS",
+    "seriesDescription": "Total Hydrocarbon Gas Liquids Product Supplied in Thousand Barrels per Day",
+    "value": "4130.799",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "HLTCBUS",
+    "seriesDescription": "Total Hydrocarbon Gas Liquids Product Supplied in Trillion Btu",
+    "value": "413.489",
+    "unit": "Trillion Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "HLROPUS",
+    "seriesDescription": "Total Hydrocarbon Gas Liquids Refinery and Blender Net Production in Thousand Barrels per Day",
+    "value": "354.111",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "HLPSPUS",
+    "seriesDescription": "Total Hydrocarbon Gas Liquids Stocks in Million Barrels",
+    "value": "199.58",
+    "unit": "Million Barrels"
+  },
+  {
+    "period": "2024-01",
+    "msn": "HLIMPUS",
+    "seriesDescription": "Total Hydrocarbon Gas Liquids Imports in Thousand Barrels per Day",
+    "value": "Not Available",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "HLEXPUS",
+    "seriesDescription": "Total Hydrocarbon Gas Liquids Exports in Thousand Barrels per Day",
+    "value": "Not Available",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EVPVPUS",
+    "seriesDescription": "Number of locations with private ports only in Number",
+    "value": "2674",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EVPUPUS",
+    "seriesDescription": "Number of locations with public ports only in Number",
+    "value": "58564",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EVPPPUS",
+    "seriesDescription": "Number of locations with public and private ports in Number",
+    "value": "865",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EVNTPUS",
+    "seriesDescription": "Number of locations with networked ports only in Number",
+    "value": "53999",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EVNOPUS",
+    "seriesDescription": "Number of locations with non-networked ports only in Number",
+    "value": "8004",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EVNNPUS",
+    "seriesDescription": "Number of locations with networked and non-networked ports in Number",
+    "value": "100",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EVDCRUS",
+    "seriesDescription": "Number of DC fast charging ports per location in Number",
+    "value": "4.26",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EVDCNUS",
+    "seriesDescription": "Number of DC fast charging ports in Number",
+    "value": "39059",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EVCHPUS",
+    "seriesDescription": "Total number of locations in Number",
+    "value": "62103",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EVCHNUS",
+    "seriesDescription": "Total number of ports in Number",
+    "value": "178963",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EV2CRUS",
+    "seriesDescription": "Number of level 2 charging ports per location in Number",
+    "value": "2.536",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EV2CNUS",
+    "seriesDescription": "Number of level 2 charging ports in Number",
+    "value": "136943",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EV1CNUS",
+    "seriesDescription": "Number of level 1 charging ports in Number",
+    "value": "2932",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "EV0CNUS",
+    "seriesDescription": "Number of legacy charging ports in Number",
+    "value": "29",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "ESRCOUS",
+    "seriesDescription": "Average Cost of Residential Electricity in Cents per Kilowatthour",
+    "value": "Not Available",
+    "unit": "Cents per Kilowatthour"
+  },
+  {
+    "period": "2024-01",
+    "msn": "ESRCAUS",
+    "seriesDescription": "Average Cost of Residential Electricity in Dollars per Million Btu",
+    "value": "Not Available",
+    "unit": "Dollars per Million Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "DHTWPUS",
+    "seriesDescription": "Wells Drilled, Dry in Number",
+    "value": "184",
+    "unit": "Number"
+  },
+  {
+    "period": "2024-01",
+    "msn": "DFTCPUS",
+    "seriesDescription": "Distillate Fuel Oil Product Supplied in Thousand Barrels per Day",
+    "value": "3707.484",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "DFTCBUS",
+    "seriesDescription": "Distillate Fuel Oil Product Supplied in Trillion Btu",
+    "value": "662.544",
+    "unit": "Trillion Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "DFROPUS",
+    "seriesDescription": "Distillate Fuel Oil Refinery and Blender Net Production in Thousand Barrels per Day",
+    "value": "4623.194",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "DFPSPUS",
+    "seriesDescription": "Distillate Fuel Oil Stocks, End of Period in Million Barrels",
+    "value": "128.034",
+    "unit": "Million Barrels"
+  },
+  {
+    "period": "2024-01",
+    "msn": "DFONUUS",
+    "seriesDescription": "On-Highway Diesel Fuel Average Price in Dollars per Gallon Including Taxes",
+    "value": "3.854",
+    "unit": "Dollars per Gallon Including Taxes"
+  },
+  {
+    "period": "2024-01",
+    "msn": "DFIMPUS",
+    "seriesDescription": "Distillate Fuel Oil Imports in Thousand Barrels per Day",
+    "value": "162.258",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "DFEXPUS",
+    "seriesDescription": "Distillate Fuel Oil Exports in Thousand Barrels per Day",
+    "value": "1097.871",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "D2RCOUS",
+    "seriesDescription": "Average Cost of Residential Heating Oil in Dollars per Gallon",
+    "value": "Not Available",
+    "unit": "Dollars per Gallon"
+  },
+  {
+    "period": "2024-01",
+    "msn": "D2RCAUS",
+    "seriesDescription": "Average Cost of Residential Heating Oil in Dollars per Million Btu",
+    "value": "Not Available",
+    "unit": "Dollars per Million Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "CPUCIUS",
+    "seriesDescription": "Consumer Price Index (Urban) in Index 1982-1984 = 100",
+    "value": "308.417",
+    "unit": "Index 1982-1984 = 100"
+  },
+  {
+    "period": "2024-01",
+    "msn": "COSXPUS",
+    "seriesDescription": "Crude Oil Stocks, Non-Strategic Petroleum Reserve, End of Period in Million Barrels",
+    "value": "426.643",
+    "unit": "Million Barrels"
+  },
+  {
+    "period": "2024-01",
+    "msn": "COSQPUS",
+    "seriesDescription": "Crude Oil Stocks, Strategic Petroleum Reserve, End of Period in Million Barrels",
+    "value": "357.929",
+    "unit": "Million Barrels"
+  },
+  {
+    "period": "2024-01",
+    "msn": "CORIPUS",
+    "seriesDescription": "Crude Oil Refinery and Blender Net Input in Thousand Barrels per Day",
+    "value": "15566.161",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "COQIPUS",
+    "seriesDescription": "Crude Oil Imports, Strategic Petroleum Reserve in Thousand Barrels per Day",
+    "value": "No Data Reported",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "COPSPUS",
+    "seriesDescription": "Crude Oil Stocks, Total, End of Period in Million Barrels",
+    "value": "784.573",
+    "unit": "Million Barrels"
+  },
+  {
+    "period": "2024-01",
+    "msn": "COIMPUS",
+    "seriesDescription": "Crude Oil Imports, Total in Thousand Barrels per Day",
+    "value": "6343.258",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "COEXPUS",
+    "seriesDescription": "Crude Oil Exports in Thousand Barrels per Day",
+    "value": "4140.742",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "CLTCPUS",
+    "seriesDescription": "Coal Consumption, Total in Thousand Short Tons",
+    "value": "Not Available",
+    "unit": "Thousand Short Tons"
+  },
+  {
+    "period": "2024-01",
+    "msn": "CLSCPUS",
+    "seriesDescription": "Coal Stock Change in Thousand Short Tons",
+    "value": "Not Available",
+    "unit": "Thousand Short Tons"
+  },
+  {
+    "period": "2024-01",
+    "msn": "CLPRPUS",
+    "seriesDescription": "Coal Production in Thousand Short Tons",
+    "value": "42950.051",
+    "unit": "Thousand Short Tons"
+  },
+  {
+    "period": "2024-01",
+    "msn": "CLNIPUS",
+    "seriesDescription": "Coal Net Imports in Thousand Short Tons",
+    "value": "Not Available",
+    "unit": "Thousand Short Tons"
+  },
+  {
+    "period": "2024-01",
+    "msn": "CLLUPUS",
+    "seriesDescription": "Coal Losses and Unaccounted for in Thousand Short Tons",
+    "value": "Not Available",
+    "unit": "Thousand Short Tons"
+  },
+  {
+    "period": "2024-01",
+    "msn": "CLIMPUS",
+    "seriesDescription": "Coal Imports in Thousand Short Tons",
+    "value": "Not Available",
+    "unit": "Thousand Short Tons"
+  },
+  {
+    "period": "2024-01",
+    "msn": "CLEXPUS",
+    "seriesDescription": "Coal Exports in Thousand Short Tons",
+    "value": "Not Available",
+    "unit": "Thousand Short Tons"
+  },
+  {
+    "period": "2024-01",
+    "msn": "AVTCPUS",
+    "seriesDescription": "Aviation Gasoline Product Supplied in Thousand Barrels per Day",
+    "value": "5.361",
+    "unit": "Thousand Barrels per Day"
+  },
+  {
+    "period": "2024-01",
+    "msn": "AVTCBUS",
+    "seriesDescription": "Aviation Gasoline Product Supplied in Trillion Btu",
+    "value": ".839",
+    "unit": "Trillion Btu"
+  },
+  {
+    "period": "2024-01",
+    "msn": "ARTCPUS",
+    "seriesDescription": "Asphalt and Road Oil Product Supplied in Thousand Barrels per Day",
+    "value": "213.297",
+    "unit": "Thousand Barrels per Day"
+  }
+]
