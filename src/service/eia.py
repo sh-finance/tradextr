@@ -118,12 +118,18 @@ class EIAService:
 
     @staticmethod
     def fetch_meta(route: str):
+        """
+        获取某个路由的meta信息
+        """
         url = EIAService.url(route=route, data=False)
         response = requests.get(url)
         return response
 
     @staticmethod
     def fetch_data(route: str, query: Query):
+        """
+        通过query请求某个路由下的数据
+        """
         url = EIAService.url(route=route, query=query)
         response = requests.get(url)
         return response
