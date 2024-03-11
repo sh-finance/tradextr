@@ -1,5 +1,6 @@
-from logger import logger
 import os
+
+from logger import logger
 from dotenv import load_dotenv
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
@@ -17,8 +18,5 @@ class Server:
     reload = os.getenv("RELOAD", "False") == "True"
 
 
-class OpenAI:
-    base_url = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
-    api_key = os.getenv("OPENAI_API_KEY", "sk-xxx")
-    model = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo-0125")
-    embedding_model = os.getenv("OPENAI_EMBEDDING_MODEL", "text-embedding-ada-002")
+class EIA:
+    api_key = os.getenv("EIA_API_KEY", "")
