@@ -1,9 +1,8 @@
 {
-  "recommendations": [
-    "streetsidesoftware.code-spell-checker",
-    "esbenp.prettier-vscode",
-    "ms-python.vscode-pylance",
-    "ms-python.python",
-    "ms-python.debugpy"
-  ]
+    "recommendations": [
+        "streetsidesoftware.code-spell-checker",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "ms-python.debugpy"
+    ]
 }
