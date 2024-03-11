@@ -1,3 +1,7 @@
 from service.eia import EIAService
 
-EIAService.test()
+print(EIAService.key())
+print(EIAService.key())
+print(EIAService.key())
+print(EIAService.key())
+print(EIAService.key())
