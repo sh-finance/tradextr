@@ -1,6 +1,8 @@
 from datetime import date
 from enum import Enum
 from typing import List
+
+import requests
 from config import EIA
 
 
@@ -114,5 +116,14 @@ class EIAService:
         url = "".join(urlSegments) + "?" + "&".join(queries)
         return url
 
-    # @staticmethod
-    # def total_energy(year: int)
+    @staticmethod
+    def fetch_meta(route: str):
+        url = EIAService.url(route=route, data=False)
+        response = requests.get(url)
+        return response
+
+    @staticmethod
+    def fetch_data(route: str, query: Query):
+        url = EIAService.url(route=route, query=query)
+        response = requests.get(url)
+        return response

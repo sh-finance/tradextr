@@ -12,5 +12,10 @@ query = Query(
     out=Format.json,
     frequency=Frequency.monthly,
 )
-url = EIAService.url("total-energy", query=query)
-print(url)
+# url = EIAService.url("total-energy", query=query)
+# print(url)
+res = EIAService.fetch_meta("/")
+print(res.json())
+
+res = EIAService.fetch_data("total-energy", query=query)
+print(res.json())
