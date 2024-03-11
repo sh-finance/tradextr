@@ -19,4 +19,10 @@ class Server:
 
 
 class EIA:
-    api_key = os.getenv("EIA_API_KEY", "")
+    protocol = "https"
+    host = "api.eia.gov"
+    api_version = "v2"
+    base_url = f"{protocol}://{host}/{api_version}"
+    api_keys = [
+        k.strip() for k in os.getenv("EIA_API_KEYS", "").split(",") if k.strip()
+    ]
