@@ -12,5 +12,5 @@ query = Query(
     out=Format.json,
     frequency=Frequency.monthly,
 )
-url = EIAService.url("total-energy", data=True, query=query)
+url = EIAService.url("total-energy", query=query)
 print(url)

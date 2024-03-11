@@ -80,7 +80,7 @@ class EIAService:
         return EIA.api_keys[EIAService.__api_key_cursor % len(EIA.api_keys)]
 
     @staticmethod
-    def url(route: str, *, data: bool = False, query: Query = Query()):
+    def url(route: str, *, data: bool = True, query: Query = Query()):
         """
         根据路由生成api_url
         route: 具体路由, 通过请求不带/data的url获取 `https://api.eia.gov/v2`
