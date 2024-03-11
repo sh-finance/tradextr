@@ -1,6 +1,10 @@
+# prod deps
 uvicorn
 fastapi
 starlette
 sse_starlette
 python-dotenv
 requests
+
+# dev deps
+pre-commit
