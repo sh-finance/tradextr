@@ -1,13 +1,16 @@
 import datetime
-from service.eia import Direction, EIAService, Query, Sort
+from service.eia import Direction, EIAService, Query, Sort, Format, Frequency
 
 query = Query(
-    data=["value", "price"],
+    data=["value"],
     offset=10,
-    end=datetime.datetime.now(),
     length=3000,
-    sort=[Sort("price", Direction.asc)],
+    sort=[Sort("value", Direction.asc)],
+    facets={"msn": ["HVTCBUS"]},
+    start=datetime.datetime(2010, 1, 1),
+    # end=datetime.datetime(2011, 1, 1),
+    out=Format.json,
+    frequency=Frequency.monthly,
 )
-query.data = ["price"]
-url = EIAService.url("test/coal", data=True, query=query)
+url = EIAService.url("total-energy", data=True, query=query)
 print(url)

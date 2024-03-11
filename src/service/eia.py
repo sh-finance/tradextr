@@ -88,7 +88,7 @@ class EIAService:
         urlSegments = [EIA.base_url, route.strip("/"), data and "/data" or ""]
         queries = [f"api_key={EIAService.key()}"]
         if query.frequency:
-            queries.append(f"frequency={query.frequency}")
+            queries.append(f"frequency={query.frequency.value}")
         if query.facets:
             for facet in query.facets:
                 values = query.facets[facet]
@@ -100,7 +100,7 @@ class EIAService:
         if query.sort:
             for i, sort in enumerate(query.sort):
                 queries.append(f"sort[{i}][column]={sort.column}")
-                queries.append(f"sort[{i}][direction]={sort.direction}")
+                queries.append(f"sort[{i}][direction]={sort.direction.value}")
         if not (query.offset is None):
             queries.append(f"offset={query.offset}")
         if not (query.length is None):
@@ -110,7 +110,7 @@ class EIAService:
         if query.end:
             queries.append(f'end={query.end.strftime("%Y-%m-%d")}')
         if query.out:
-            queries.append(f"out={query.out}")
+            queries.append(f"out={query.out.value}")
         url = "".join(urlSegments) + "?" + "&".join(queries)
         return url
 
