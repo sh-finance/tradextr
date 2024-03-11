@@ -1,4 +1,4 @@
-# agent-social-media
+# Tradextr
 
 ## 环境初始化
 
