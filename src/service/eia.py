@@ -5,6 +5,7 @@ from enum import Enum
 from typing import Callable, List
 from service.mongo import mongo
 from config import EIA
+from logger import logger
 
 
 class Frequency(Enum):
@@ -181,7 +182,7 @@ class EIAService:
         """
         query = query or Query()
         url = EIAService.url(route=route, query=query)
-        print(f"url={url}")
+        logger.info(f"url={url}")
         body = requests.get(url).json()
         response = body.get("response", {})
         data, total = response.get("data", []), response.get("total", 0)
@@ -189,12 +190,12 @@ class EIAService:
         try:
             handler(data, route)
         except Exception as e:
-            print(e)
+            logger.error(e)
             return
 
         # 继续获取下一页
         offset, _length = EIAService.calc_pagination(next_page=True, query=query)
-        print(f"next_page_offset: {offset}, total: {total}")
+        logger.info(f"next_page_offset: {offset}, total: {total}")
         if offset >= int(total):
             return
         query.offset = offset
@@ -213,13 +214,13 @@ class EIAService:
     @staticmethod
     def recursive_fetch_and_store_data(route: str = ""):
         meta = EIAService.fetch_meta(route)
-        print(route)
+        logger.info(route)
         routes = meta.get("routes", [])
         if routes:
             for sub_route in routes:
                 sub_route_id = sub_route.get("id", "")
                 if not sub_route_id:
-                    print(f"sub_route_id is empty: {sub_route_id}")
+                    logger.warning(f"sub_route_id is empty: {sub_route_id}")
                     continue
                 EIAService.recursive_fetch_and_store_data(
                     "/".join([route, sub_route_id])
