@@ -1,9 +1,10 @@
+import requests
+
 from datetime import date
 from enum import Enum
 from typing import Callable, List
 from logger import logger
-
-import requests
+from service.mongo import mongo
 from config import EIA
 
 
@@ -192,7 +193,19 @@ class EIAService:
 
         # 继续获取下一页
         offset, _length = EIAService.calc_pagination(next_page=True, query=query)
+        logger.debug(f"next_page_offset: {offset}, total: {total}")
         if offset >= int(total):
             return
         query.offset = offset
         EIAService.fetch_data(route=route, query=query, handler=handler)
+
+    @staticmethod
+    def store_data(data: list[dict[str, str]]):
+        tradextr = mongo["tradextr"]
+        eia = tradextr["eia"]
+        res = eia.insert_many(data)
+        logger.debug(res)
+
+    @staticmethod
+    def fetch_and_store_data(route: str, *, query: Query | None = None):
+        EIAService.fetch_data(route=route, query=query, handler=EIAService.store_data)

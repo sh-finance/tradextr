@@ -1,8 +1,14 @@
-from service.mongo import mongo
+import datetime
+from service.eia import Direction, Frequency, Query, Sort, EIAService
 
-print(mongo.list_database_names())
-tradextr = mongo["tradextr"]
-print(tradextr.list_collection_names())
-eia = tradextr["eia"]
-for index in eia.list_indexes():
-    print(index)
+query = Query(
+    data=["value"],
+    offset=30,
+    length=10,
+    sort=[Sort("period", Direction.asc)],
+    facets={"msn": ["HVTCBUS"]},
+    start=datetime.datetime(2010, 1, 1),
+    frequency=Frequency.monthly,
+)
+
+EIAService.fetch_and_store_data("total-energy", query=query)
