@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["dotenv", "fastapi", "sectorid", "tradextr", "uvicorn"]
+  "cSpell.words": [
+    "dotenv",
+    "fastapi",
+    "pymongo",
+    "sectorid",
+    "tradextr",
+    "uvicorn"
+  ]
 }

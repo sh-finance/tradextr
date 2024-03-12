@@ -5,6 +5,8 @@ starlette
 sse_starlette
 python-dotenv
 requests
+pymongo
+
 
 # dev deps
 pre-commit

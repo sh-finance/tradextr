@@ -18,6 +18,13 @@ class Server:
     reload = os.getenv("RELOAD", "False") == "True"
 
 
+class Mongo:
+    host = os.getenv("MONGO_HOST", "localhost")
+    port = int(os.getenv("MONGO_PORT", 27017))
+    username = os.getenv("MONGO_USERNAME", "")
+    password = os.getenv("MONGO_PASSWORD", "")
+
+
 class EIA:
     protocol = "https"
     host = "api.eia.gov"
