@@ -117,6 +117,40 @@ class EIAService:
         return url
 
     @staticmethod
+    def calc_pagination(next_page: bool = False, query: Query | None = None):
+        """
+        计算分页信息
+        """
+        offset, length = 0, 5000
+        if next_page:
+            offset += length
+        if not query:
+            return offset, length
+        if not query.length:
+            out = query.out or Format.json
+            """
+            > Our request may generate more rows than we'd like to ingest in one API call.
+            > EIA's API limits its data returns to the first 5,000 rows responsive to the request (300 rows if we request XML format).
+            """
+            if out == Format.json:
+                length = 5000
+            if out == Format.xml:
+                length = 300
+        else:
+            length = query.length
+        if query.offset:
+            if next_page:
+                offset = query.offset + length
+            else:
+                offset = query.offset
+        else:
+            if next_page:
+                offset = length
+            else:
+                offset = 0
+        return offset, length
+
+    @staticmethod
     def fetch_meta(route: str):
         """
         获取某个路由的meta信息
@@ -126,10 +160,23 @@ class EIAService:
         return response
 
     @staticmethod
-    def fetch_data(route: str, query: Query):
+    def fetch_data(route: str, query: Query | None = None):
         """
         通过query请求某个路由下的数据
         """
-        url = EIAService.url(route=route, query=query)
-        response = requests.get(url)
-        return response
+
+        items: list[dict[str, str]] = []
+        url = (
+            query
+            and EIAService.url(route=route, query=query)
+            or EIAService.url(route=route)
+        )
+        body = requests.get(url).json()
+        request = body.get("request", {})
+        response = body.get("response", {})
+        print(request)
+        data, total = response.get("data", []), response.get("total", 0)
+        print(total)
+        items.extend(data)
+
+        return items
