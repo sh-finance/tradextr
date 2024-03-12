@@ -8,9 +8,11 @@ mongo = MongoClient(
     document_class=dict[str, str],
 )
 
-print(mongo.list_database_names())
+# print(mongo.list_database_names())
 tradextr = mongo["tradextr"]
-print(tradextr.list_collection_names())
-eia = tradextr["eia"]
-for index in eia.list_indexes():
-    print(index)
+collection_names = tradextr.list_collection_names()
+# eia = tradextr["eia"]
+collection_name = "eia"
+if not (collection_name in collection_names):
+    tradextr.create_collection(collection_name)
+    print(f"collection `{collection_name}` created.")

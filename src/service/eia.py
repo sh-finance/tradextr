@@ -3,7 +3,6 @@ import requests
 from datetime import date
 from enum import Enum
 from typing import Callable, List
-from logger import logger
 from service.mongo import mongo
 from config import EIA
 
@@ -18,22 +17,22 @@ class Direction(Enum):
     desc = "desc"
 
 
-class Sort:
-    column: str
-    direction: Direction
-
-    def __init__(self, column: str, direction: Direction):
-        self.column = column
-        self.direction = direction
-
-
 class Format(Enum):
     json = "json"
     xml = "xml"
 
 
+class Sort:
+    column: str
+    direction: str
+
+    def __init__(self, column: str, direction: str):
+        self.column = column
+        self.direction = direction
+
+
 class Query:
-    frequency: Frequency | None
+    frequency: str | None
     facets: dict[str, list[str]] | None
     data: list[str] | None
     sort: list[Sort] | None
@@ -41,12 +40,12 @@ class Query:
     length: int | None
     start: date | None
     end: date | None
-    out: Format | None
+    out: str | None
 
     def __init__(
         self,
         *,
-        frequency: Frequency | None = None,
+        frequency: str | None = None,
         facets: dict[str, list[str]] | None = None,
         data: List[str] | None = None,
         sort: List[Sort] | None = None,
@@ -54,7 +53,7 @@ class Query:
         length: int | None = None,
         start: date | None = None,
         end: date | None = None,
-        out: Format | None = None,
+        out: str | None = None,
     ):
         self.frequency = frequency
         self.facets = facets
@@ -63,11 +62,11 @@ class Query:
         self.offset = offset or 0
         self.start = start
         self.end = end
-        self.out = out or Format.json
+        self.out = out or "json"
         if not length:
-            if self.out == Format.json:
+            if self.out == "json":
                 self.length = 5000
-            if self.out == Format.xml:
+            if self.out == "xml":
                 self.length = 300
         else:
             self.length = length
@@ -99,7 +98,7 @@ class EIAService:
         urlSegments = [EIA.base_url, route.strip("/"), data and "/data" or ""]
         queries = [f"api_key={EIAService.key()}"]
         if query.frequency:
-            queries.append(f"frequency={query.frequency.value}")
+            queries.append(f"frequency={query.frequency}")
         if query.facets:
             for facet in query.facets:
                 values = query.facets[facet]
@@ -111,7 +110,7 @@ class EIAService:
         if query.sort:
             for i, sort in enumerate(query.sort):
                 queries.append(f"sort[{i}][column]={sort.column}")
-                queries.append(f"sort[{i}][direction]={sort.direction.value}")
+                queries.append(f"sort[{i}][direction]={sort.direction}")
         if not (query.offset is None):
             queries.append(f"offset={query.offset}")
         if not (query.length is None):
@@ -121,7 +120,7 @@ class EIAService:
         if query.end:
             queries.append(f'end={query.end.strftime("%Y-%m-%d")}')
         if query.out:
-            queries.append(f"out={query.out.value}")
+            queries.append(f"out={query.out}")
         url = "".join(urlSegments) + "?" + "&".join(queries)
         return url
 
@@ -136,14 +135,14 @@ class EIAService:
         if not query:
             return offset, length
         if not query.length:
-            out = query.out or Format.json
+            out = query.out or "json"
             """
             > Our request may generate more rows than we'd like to ingest in one API call.
             > EIA's API limits its data returns to the first 5,000 rows responsive to the request (300 rows if we request XML format).
             """
-            if out == Format.json:
+            if out == "json":
                 length = 5000
-            if out == Format.xml:
+            if out == "xml":
                 length = 300
         else:
             length = query.length
@@ -166,6 +165,8 @@ class EIAService:
         """
         url = EIAService.url(route=route, data=False)
         response = requests.get(url)
+        body = response.json()
+        response = body.get("response", {})
         return response
 
     @staticmethod
@@ -173,39 +174,60 @@ class EIAService:
         route: str,
         *,
         query: Query | None = None,
-        handler: Callable[[list[dict[str, str]]], None],
+        handler: Callable[[list[dict[str, str]], str], None],
     ) -> None:
         """
         通过query请求某个路由下的数据
         """
         query = query or Query()
         url = EIAService.url(route=route, query=query)
-        logger.debug(f"url={url}")
+        print(f"url={url}")
         body = requests.get(url).json()
         response = body.get("response", {})
         data, total = response.get("data", []), response.get("total", 0)
 
         try:
-            handler(data)
+            handler(data, route)
         except Exception as e:
-            logger.error(e)
+            print(e)
             return
 
         # 继续获取下一页
         offset, _length = EIAService.calc_pagination(next_page=True, query=query)
-        logger.debug(f"next_page_offset: {offset}, total: {total}")
+        print(f"next_page_offset: {offset}, total: {total}")
         if offset >= int(total):
             return
         query.offset = offset
         EIAService.fetch_data(route=route, query=query, handler=handler)
 
     @staticmethod
-    def store_data(data: list[dict[str, str]]):
+    def store_data(data: list[dict[str, str]], route: str):
         tradextr = mongo["tradextr"]
         eia = tradextr["eia"]
-        res = eia.insert_many(data)
-        logger.debug(res)
+        eia.insert_many(data)
 
     @staticmethod
     def fetch_and_store_data(route: str, *, query: Query | None = None):
         EIAService.fetch_data(route=route, query=query, handler=EIAService.store_data)
+
+    @staticmethod
+    def recursive_fetch_and_store_data(route: str = ""):
+        meta = EIAService.fetch_meta(route)
+        print(route)
+        routes = meta.get("routes", [])
+        if routes:
+            for sub_route in routes:
+                sub_route_id = sub_route.get("id", "")
+                if not sub_route_id:
+                    print(f"sub_route_id is empty: {sub_route_id}")
+                    continue
+                EIAService.recursive_fetch_and_store_data(
+                    "/".join([route, sub_route_id])
+                )
+        else:
+            data = meta.get("data", {})
+            data_keys = data.keys()
+            for frequency in meta.get("frequency", []):
+                frequency_id = frequency.get("id", "")
+                query = Query(frequency=frequency_id, data=data_keys)
+                EIAService.fetch_and_store_data(route=route, query=query)
