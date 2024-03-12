@@ -1,6 +1,7 @@
 from datetime import date
 from enum import Enum
-from typing import List
+from typing import Callable, List
+from logger import logger
 
 import requests
 from config import EIA
@@ -58,11 +59,17 @@ class Query:
         self.facets = facets
         self.data = data
         self.sort = sort
-        self.offset = offset
-        self.length = length
+        self.offset = offset or 0
         self.start = start
         self.end = end
-        self.out = out
+        self.out = out or Format.json
+        if not length:
+            if self.out == Format.json:
+                self.length = 5000
+            if self.out == Format.xml:
+                self.length = 300
+        else:
+            self.length = length
 
 
 class EIAService:
@@ -82,11 +89,12 @@ class EIAService:
         return EIA.api_keys[EIAService.__api_key_cursor % len(EIA.api_keys)]
 
     @staticmethod
-    def url(route: str, *, data: bool = True, query: Query = Query()):
+    def url(route: str, *, data: bool = True, query: Query | None = None):
         """
         根据路由生成api_url
         route: 具体路由, 通过请求不带/data的url获取 `https://api.eia.gov/v2`
         """
+        query = query or Query()
         urlSegments = [EIA.base_url, route.strip("/"), data and "/data" or ""]
         queries = [f"api_key={EIAService.key()}"]
         if query.frequency:
@@ -117,7 +125,7 @@ class EIAService:
         return url
 
     @staticmethod
-    def calc_pagination(next_page: bool = False, query: Query | None = None):
+    def calc_pagination(*, next_page: bool = False, query: Query | None = None):
         """
         计算分页信息
         """
@@ -160,23 +168,31 @@ class EIAService:
         return response
 
     @staticmethod
-    def fetch_data(route: str, query: Query | None = None):
+    def fetch_data(
+        route: str,
+        *,
+        query: Query | None = None,
+        handler: Callable[[list[dict[str, str]]], None],
+    ) -> None:
         """
         通过query请求某个路由下的数据
         """
-
-        items: list[dict[str, str]] = []
-        url = (
-            query
-            and EIAService.url(route=route, query=query)
-            or EIAService.url(route=route)
-        )
+        query = query or Query()
+        url = EIAService.url(route=route, query=query)
+        logger.debug(f"url={url}")
         body = requests.get(url).json()
-        request = body.get("request", {})
         response = body.get("response", {})
-        print(request)
         data, total = response.get("data", []), response.get("total", 0)
-        print(total)
-        items.extend(data)
 
-        return items
+        try:
+            handler(data)
+        except Exception as e:
+            logger.error(e)
+            return
+
+        # 继续获取下一页
+        offset, _length = EIAService.calc_pagination(next_page=True, query=query)
+        if offset >= int(total):
+            return
+        query.offset = offset
+        EIAService.fetch_data(route=route, query=query, handler=handler)
