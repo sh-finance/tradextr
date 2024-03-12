@@ -1,0 +1,37 @@
+{
+  "id": "natural-gas",
+  "description": "EIA natural gas survey data",
+  "frequency": [
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "duoarea",
+      "description": "DuoArea"
+    },
+    {
+      "id": "product",
+      "description": "Product"
+    },
+    {
+      "id": "process",
+      "description": "Process"
+    },
+    {
+      "id": "series",
+      "description": "Series"
+    }
+  ],
+  "data": {
+    "value": []
+  },
+  "startPeriod": null,
+  "endPeriod": null,
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

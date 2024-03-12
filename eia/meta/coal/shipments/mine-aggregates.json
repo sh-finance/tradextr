@@ -1,0 +1,54 @@
+{
+  "id": "mine-aggregates",
+  "name": "Mine Aggregates",
+  "description": "Coal shipments aggregated at mine-level data, \r\n        including price, quantity, quality, and rank.  Source: EIA Form 7A and \r\n        MSHA Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/",
+  "frequency": [
+    {
+      "id": "quarterly",
+      "description": "One data point every 3 months.",
+      "query": "Q",
+      "format": "YYYY-\"Q\"Q"
+    },
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "mineStateId",
+      "description": "Mine State\\Region"
+    },
+    {
+      "id": "mineMSHAId",
+      "description": "Mine"
+    },
+    {
+      "id": "coalRankId",
+      "description": "Coal Rank"
+    }
+  ],
+  "data": {
+    "quantity": {
+      "units": "tons"
+    },
+    "price": {
+      "units": "average dollars per ton"
+    },
+    "heat-content": {
+      "units": "Btu per pound"
+    },
+    "sulfur-content": {
+      "units": "percent by weight"
+    },
+    "ash-content": {
+      "units": "percent by weight"
+    }
+  },
+  "startPeriod": "2008",
+  "endPeriod": "2022",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

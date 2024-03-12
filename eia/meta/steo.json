@@ -1,0 +1,38 @@
+{
+  "id": "steo",
+  "name": "Short Term Energy Outlook",
+  "description": "Monthly short term (18 month) projections using STEO model.  \r\n        Report and interactive projection data browser:  STEO (www.eia.gov/steo/)",
+  "frequency": [
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    },
+    {
+      "id": "quarterly",
+      "description": "One data point every 3 months.",
+      "query": "Q",
+      "format": "YYYY-\"Q\"Q"
+    },
+    {
+      "id": "monthly",
+      "description": "One data point for each month.",
+      "query": "M",
+      "format": "YYYY-MM"
+    }
+  ],
+  "facets": [
+    {
+      "id": "seriesId",
+      "description": "Unique series identifier"
+    }
+  ],
+  "data": {
+    "value": []
+  },
+  "startPeriod": "1974-01",
+  "endPeriod": "2025-12",
+  "defaultDateFormat": "YYYY-MM",
+  "defaultFrequency": "monthly"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "reserves-capacity",
+  "name": "Reserves Capacity",
+  "description": "Coal capacity data, including productive capacity, stocks, \r\n        and recoverable reserves by state, region and mine type.  Source: EIA Form 7A and \r\n        MSHA Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/",
+  "frequency": [
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "stateId",
+      "description": "State\\Region"
+    },
+    {
+      "id": "mineTypeId",
+      "description": "Mine Type"
+    }
+  ],
+  "data": {
+    "productive-capacity": {
+      "units": "short tons"
+    },
+    "recoverable-reserves": {
+      "units": "short tons"
+    },
+    "producer-distributor-stocks": {
+      "units": "short tons"
+    }
+  },
+  "startPeriod": "2001",
+  "endPeriod": "2022",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

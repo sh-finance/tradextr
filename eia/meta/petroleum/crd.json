@@ -1,0 +1,67 @@
+{
+  "id": "crd",
+  "name": "Petroleum, Crude Reserves and Production",
+  "description": "Petroleum, Crude Reserves and Production",
+  "routes": [
+    {
+      "id": "pres",
+      "name": "Crude Oil Proved Reserves, Reserves Changes, and Production",
+      "description": "W -- Individual state volumes are withheld to avoid disclosure of operator-level reserves data, due to statistical precision requirements, or due to other data quality reasons. The individual state volumes are included in the U.S. Total volume. The volumes in the table above are crude oil ONLY (aka Black Oil), excluding lease condensate. The production estimates in this table are based on data reported on Form EIA-23L, \"Annual Survey of Domestic Oil and Gas Reserves.\" They may differ from the official Energy Information Administration production data for crude oil contained in the \"Petroleum Supply Annual.\""
+    },
+    {
+      "id": "cplc",
+      "name": "Crude Oil plus Lease Condensate Proved Reserves, Reserves Changes, and Production",
+      "description": "W -- Individual state volumes are withheld to avoid disclosure of operator-level reserves data, due to statistical precision requirements, or due to other data quality reasons. The individual state volumes are included in the U.S. Total volume"
+    },
+    {
+      "id": "nprod",
+      "name": "Proved Nonproducing Reserves",
+      "description": "W -- Individual state volumes are withheld to avoid disclosure of operator-level reserves data, due to statistical precision requirements, or due to other data quality reasons. The individual state volumes are included in the U.S. Total volume"
+    },
+    {
+      "id": "crpdn",
+      "name": "Crude Oil Production",
+      "description": "Year-to-date totals include revised monthly production estimates by state published in Petroleum Navigator. Crude oil production quantities are estimated by state and summed to the PADD and the U.S. level. State production estimates reported by EIA are normally different from data reported by state agencies. For example, production estimates for Texas reported on table 26 are different from production reported by the Railroad Commission of Texas. See EIA <a href=\"http://www.eia.gov/todayinenergy/detail.cfm?id=22012\"> Today In Energy </a> article released on July 10, 2015 for an explanation of differences in production data for Texas. Totals may not equal sum of components due to independent rounding."
+    },
+    {
+      "id": "api",
+      "name": "Crude Oil and Lease Condensate Production by API Gravity",
+      "description": "API gravity is the American Petroleum Institute's measure of specific gravity of crude oil or condensate in degrees. The measuring scale is calibrated in terms of degrees API. Degrees API = (141.5 / sp.gr.60 deg.F/60 deg.F) - 131.5.  At the individual state/area level, production volumes in the \"Unknown\" category are proportionately distributed to the nine API categories, which are then combined into four categories in order to avoid disclosure of company-specific data.  Alaska production by API category is not available. The \"Other states\" grouping includes Alabama, Arizona, Federal Offshore California, Florida, Illinois, Indiana, Kentucky, Michigan, Mississippi, Missouri, Nebraska, Nevada, New York, South Dakota, Tennessee, and Virginia. The sum of individual states may not equal total Lower 48 volumes due to independent rounding. A zero may indicate volume of less than 0.5 thousand barrels per day.  Previous months' production volumes may have been revised for all states/areas."
+    },
+    {
+      "id": "gom",
+      "name": "Gulf of Mexico Federal Offshore Production",
+      "description": "Includes Federal Offshore Alabama, Louisiana, and Texas."
+    },
+    {
+      "id": "drill",
+      "name": "Crude Oil and Natural Gas Drilling Activity",
+      "description": "Rotary Rigs in Operation: Baker Hughes, Inc.,  Houston, TX,  \"North America Rig Count,\" used with permission. See http://phx.corporate-ir.net/phoenix.zhtml?c=79687&p=irol-reportsother.  Active Well Service Rig Count: Energy Workforce & Technology Council, Houston, TX.  Rotary rigs in operation are reported weekly. Monthly data are averages of 4- or 5-week reporting periods, not calendar months. Annual data are averages over 52 or 53 weeks, not calendar year. Published data are rounded to the nearest whole number. Geographic coverage is the 50 States and the District of Columbia."
+    },
+    {
+      "id": "wellend",
+      "name": "Crude Oil and Natural Gas Exploratory and Development Wells",
+      "description": "Geographic coverage is the 50 States and the District of Columbia."
+    },
+    {
+      "id": "seis",
+      "name": "Maximum U.S. Active Seismic Crew Counts",
+      "description": "\"48 States\" is the United States excluding Alaska and Hawaii. \"48 States, Offshore\" are Federal and State Jurisdication waters of the Gulf of Mexico. Alaska is all onshore. Total crews includes crews with unknown survey dimension. Data are reported on the first and fifteenth of each month, except January when they are reported only on the fifteenth. When semi-monthly values differ for the month, the larger of the two values is shown here. Consequently, this table reflects the maximum number of crews at work at any time during the month."
+    },
+    {
+      "id": "wellfoot",
+      "name": "Footage Drilled for Crude Oil and Natural Gas Wells",
+      "description": "Totals may not equal sum of components due to independent rounding."
+    },
+    {
+      "id": "welldep",
+      "name": "Average Depth of Crude Oil and Natural Gas Wells",
+      "description": "Average depth may not equal averaging of components due to independent rounding."
+    },
+    {
+      "id": "wellcost",
+      "name": "Costs of Crude Oil and Natural Gas Wells Drilled",
+      "description": "*In chained (2000) dollars, calculated by using <a href=\"http://www.eia.doe.gov/emeu/aer/append_d.html\" class=\"reg\">gross domestic product price deflators</a>."
+    }
+  ]
+}

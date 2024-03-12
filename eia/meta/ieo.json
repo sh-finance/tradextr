@@ -1,0 +1,23 @@
+{
+  "id": "ieo",
+  "name": "International Energy Outlook",
+  "description": "Annual international projections using the World Energy Projection System (WEPS) model for release year.  Report and interactive projection data browser:  IEO (www.eia.gov/ieo/)",
+  "routes": [
+    {
+      "id": "2023",
+      "name": "2023"
+    },
+    {
+      "id": "2021",
+      "name": "2021"
+    },
+    {
+      "id": "2019",
+      "name": "2019"
+    },
+    {
+      "id": "2017",
+      "name": "2017"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "co2-emissions",
+  "name": "State CO2 Emissions",
+  "description": "EIA CO2 Emissions data",
+  "routes": [
+    {
+      "id": "co2-emissions-aggregates",
+      "name": "Total CO2 Emissions by Sector and Fuel",
+      "description": "CO2 emission aggregates by fuel, state, and sector.  Report and documentation: https://www.eia.gov/environment/emissions/state/"
+    },
+    {
+      "id": "co2-emissions-and-carbon-coefficients",
+      "name": "CO2 Emissions and Carbon Coefficients by Product",
+      "description": "CO2 emissions and carbon coefficients by fuel, state, and sector. Report and documentation: https://www.eia.gov/environment/emissions/state/"
+    }
+  ]
+}

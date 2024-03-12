@@ -1,0 +1,35 @@
+{
+  "id": "market-sales-price",
+  "name": "Market Sales Price",
+  "description": "Coal market sales prices and amounts by mine types for \r\n        regions and states (unless withheld for pricing protections).  Source: EIA Form \r\n            7A and MSHA Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/",
+  "frequency": [
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "stateRegionId",
+      "description": "State\\Region"
+    },
+    {
+      "id": "marketTypeId",
+      "description": "Market Type"
+    }
+  ],
+  "data": {
+    "sales": {
+      "units": "short tons"
+    },
+    "price": {
+      "units": "dollars per short ton"
+    }
+  },
+  "startPeriod": "2001",
+  "endPeriod": "2022",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

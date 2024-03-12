@@ -1,0 +1,41 @@
+{
+  "id": "IEO2023",
+  "description": "International Energy Outlook 2023",
+  "frequency": [
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "history",
+      "description": "History"
+    },
+    {
+      "id": "scenario",
+      "description": "Scenario"
+    },
+    {
+      "id": "tableId",
+      "description": "Table"
+    },
+    {
+      "id": "seriesId",
+      "description": "Series"
+    },
+    {
+      "id": "regionId",
+      "description": "Region"
+    }
+  ],
+  "data": {
+    "value": []
+  },
+  "startPeriod": "2020",
+  "endPeriod": "2050",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

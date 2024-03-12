@@ -1,0 +1,67 @@
+{
+  "id": "prod",
+  "name": "Natural Gas, Production",
+  "description": "Natural Gas, Production",
+  "routes": [
+    {
+      "id": "oilwells",
+      "name": "Number of Gas Producing Oil Wells",
+      "description": "Well counts include any well that produced natural gas at any time during the calendar year.  For most states, \"Oil Wells\" refers only to oil wells that produce natural gas (a subset of all oil wells). However, oil well counts for Illinois, Indiana, and Kentucky (derived from World Oil) include all oil wells. As of report year 2021, well count data have been discontinued. The latest natural gas well count data can be found at <a href ='https://www.eia.gov/petroleum/wells/' class='reg'>U.S. Oil and Natural Gas Wells by Production Rate</a>."
+    },
+    {
+      "id": "sum",
+      "name": "Natural Gas Gross Withdrawals and Production",
+      "description": "Beginning with 2006, \"Other States\" volumes for the production series include the following states/areas: Alabama, Arizona, Florida, Idaho, Illinois, Indiana, Kentucky, Maryland, Michigan, Mississippi, Missouri, Nebraska, Nevada, New York, Oregon, South Dakota, Tennessee, and Virginia. Federal Offshore Pacific is included in California through 2020, and in \"Other States\" starting in 2021. Production series data for 2021 forward are estimates. Final 2021 state-level production series data will not be available until the 2021 Natural Gas Annual is published (scheduled for the third quarter of 2022). Gross withdrawal volumes in Florida fluctuate from year to year because nonhydrocarbon gases are occasionally included in gross withdrawals."
+    },
+    {
+      "id": "whv",
+      "name": "Natural Gas Wellhead Value and Marketed Production",
+      "description": "A number of states reported values associated with production volumes other than marketed production. Prior to 1997, state production for Texas, Louisiana, and Alabama includes a portion of the Federal Offshore Gulf of Mexico production.  Production for these states prior to 1997 excluding the Federal Offshore Gulf of Mexico can be found at <a href=\"http://www.eia.gov/state/seds/\">the state energy data system (seds)</a>."
+    },
+    {
+      "id": "off",
+      "name": "Offshore Gross Withdrawals of Natural Gas",
+      "description": "Totals may not equal sum of components due to independent rounding.  Federal Offshore Gulf of Mexico production volumes are presented as a separate data series beginning in 2001. Production data for the Gulf of Mexico for years prior to 2001 are presented as part of the production volumes for the States of Alabama, Louisiana and Texas. Prior to 1997, state production for Texas, Louisiana, and Alabama includes a portion of the Federal Offshore Gulf of Mexico production.  Production for these states prior to 1997 excluding the Federal Offshore Gulf of Mexico can be found at <a href=\"http://www.eia.gov/state/seds/\">the state energy data system (seds)</a>."
+    },
+    {
+      "id": "deep",
+      "name": "Gulf of Mexico Federal Offshore Production",
+      "description": "Federal Offshore Gulf of Mexico production volumes are presented as a separate data series beginning in 2001. Production data for the Gulf of Mexico for years prior to 2001 are presented as part of the production volumes for the States of Alabama, Louisiana and Texas."
+    },
+    {
+      "id": "ngpl",
+      "name": "Natural Gas Plant Liquids Production",
+      "description": "W --  Individual state volumes are withheld to avoid disclosure of operator-level reserves data, due to statistical precision requirements, or due to other data quality reasons.  The individual state volumes are included in the U.S. Total volume."
+    },
+    {
+      "id": "lc",
+      "name": "Lease Condensate Production",
+      "description": "W --  Individual state volumes are withheld to avoid disclosure of operator-level reserves data, due to statistical precision requirements, or due to other data quality reasons.  The individual state volumes are included in the U.S. Total volume."
+    },
+    {
+      "id": "coalbed",
+      "name": "Coalbed Methane Production",
+      "description": "Coalbed Methane production data collected in conjunction with proved reserves data on Form EIA-23 are unofficial.  Official Coalbed Methane production data from Form EIA-895 can be found in <a href='ng_prod_sum_dcu_NUS_a.htm' class='reg'>Natural Gas Gross Withdrawals and Production</a>. *Eastern States includes Virginia prior to 2006.  Other States includes Oklahoma, Pennsylvania, Utah, Virginia, West Virginia, and Wyoming for data prior to 2000. These states are individually listed or grouped in Eastern States and Western States for 2000 and later."
+    },
+    {
+      "id": "shalegas",
+      "name": "Shale Gas Production",
+      "description": "Shale Gas production data collected in conjunction with proved reserves data on Form EIA-23 are unofficial. Official Shale Gas production data from Form EIA-895 can be found in <a href=\"http://www.eia.gov/dnav/ng/ng_prod_sum_dcu_NUS_a.htm\">Natural Gas Gross Withdrawals and Production</a>."
+    },
+    {
+      "id": "ss",
+      "name": "Supplemental Gas Supplies",
+      "description": null
+    },
+    {
+      "id": "wells",
+      "name": "Number of Producing Gas Wells",
+      "description": "Prior to 2001, the well counts for Federal Offshore Gulf of Mexico were included in the well counts for Alabama, Louisiana, and Texas. Well data derived from Enverus, except for Illinois, Indiana, and Kentucky; for these states, data are from World Oil and consist of all gas wells and all oil wells. As of report year 2021, well count data have been discontinued. The latest natural gas well count data can be found at <a href ='https://www.eia.gov/petroleum/wells/' class='reg'>U.S. Oil and Natural Gas Wells by Production Rate</a>."
+    },
+    {
+      "id": "pp",
+      "name": "Natural Gas Plant Processing",
+      "description": null
+    }
+  ]
+}

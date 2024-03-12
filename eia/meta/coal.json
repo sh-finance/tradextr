@@ -1,0 +1,47 @@
+{
+  "id": "coal",
+  "name": "Coal",
+  "description": "EIA coal energy data",
+  "routes": [
+    {
+      "id": "shipments",
+      "name": "Coal Shipments",
+      "description": "EIA shipments of coal data"
+    },
+    {
+      "id": "consumption-and-quality",
+      "name": "Consumption and Quality",
+      "description": "Coal consumption and quality data by state and sector, \n            including price, reciepts, heat content, sulfur content, ash content, and stocks. \n            Source: EIA Form 7A and MSHA Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/"
+    },
+    {
+      "id": "aggregate-production",
+      "name": "Aggregate Production",
+      "description": "Coal state aggregated data by mine type, includes production, \r\n        productivity, labor hours, employees, and coal rank.  Source: EIA Form 7A and MSHA Form \r\n        7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/"
+    },
+    {
+      "id": "exports-imports-quantity-price",
+      "name": "Exports\\Imports Quantity\\Price",
+      "description": "Coal import/export data, including price, quantity, country, \r\n        rank, and customs district.  Source: EIA Form 7A and MSHA Form 7000-2.  Interactive \r\n        browser:  https://www.eia.gov/coal/data/browser/"
+    },
+    {
+      "id": "market-sales-price",
+      "name": "Market Sales Price",
+      "description": "Coal market sales prices and amounts by mine types for \r\n        regions and states (unless withheld for pricing protections).  Source: EIA Form \r\n            7A and MSHA Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/"
+    },
+    {
+      "id": "mine-production",
+      "name": "Mine Production",
+      "description": "Coal mine-level data, including production, region, state, \r\n        county, rank, status, type, name and description.  Source: EIA Form 7A and MSHA \r\n        Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/"
+    },
+    {
+      "id": "price-by-rank",
+      "name": "Price by Rank",
+      "description": "Coal prices by rank data for region and state.  \r\n        Source: EIA Form 7A and MSHA Form 7000-2.  Interactive browser: \r\n        https://www.eia.gov/coal/data/browser/  "
+    },
+    {
+      "id": "reserves-capacity",
+      "name": "Reserves Capacity",
+      "description": "Coal capacity data, including productive capacity, stocks, \r\n        and recoverable reserves by state, region and mine type.  Source: EIA Form 7A and \r\n        MSHA Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/"
+    }
+  ]
+}

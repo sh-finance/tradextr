@@ -1,0 +1,54 @@
+{
+  "id": "plant-aggregates",
+  "name": "Plant Aggregates",
+  "description": "Coal reciepts aggregated to plant-level data, \n        including price, quantity, quality, and rank.  Source: EIA Form 7A \n            and MSHA Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/",
+  "frequency": [
+    {
+      "id": "quarterly",
+      "description": "One data point every 3 months.",
+      "query": "Q",
+      "format": "YYYY-\"Q\"Q"
+    },
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "location",
+      "description": "Plant State\\Region."
+    },
+    {
+      "id": "plant",
+      "description": "Plant"
+    },
+    {
+      "id": "rank",
+      "description": "Coal Rank"
+    }
+  ],
+  "data": {
+    "quantity": {
+      "units": "tons"
+    },
+    "price": {
+      "units": "average dollars per ton"
+    },
+    "sulfur-content": {
+      "units": "percent by weight"
+    },
+    "ash-content": {
+      "units": "percent by weight"
+    },
+    "heat-content": {
+      "units": "Btu per pound"
+    }
+  },
+  "startPeriod": "2008",
+  "endPeriod": "2022",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

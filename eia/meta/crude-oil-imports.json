@@ -1,0 +1,50 @@
+{
+  "id": "crude-oil-imports",
+  "name": "Crude Oil Imports",
+  "description": "Crude oil imports by country to destination, \r\n        includes type, grade, quantity.  Source: EIA-814  Interactive data \r\n        product:  www.eia.gov/petroleum/imports/companylevel/",
+  "frequency": [
+    {
+      "id": "monthly",
+      "description": "One data point for each month.",
+      "query": "M",
+      "format": "YYYY-MM"
+    },
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "originId",
+      "description": "Origin Id"
+    },
+    {
+      "id": "originType",
+      "description": "Origin Type"
+    },
+    {
+      "id": "destinationId",
+      "description": "Destination Id"
+    },
+    {
+      "id": "destinationType",
+      "description": "Destination Type"
+    },
+    {
+      "id": "gradeId",
+      "description": "Grade Id"
+    }
+  ],
+  "data": {
+    "quantity": {
+      "units": "thousand barrels"
+    }
+  },
+  "startPeriod": "2009-01",
+  "endPeriod": "2023-12",
+  "defaultDateFormat": "YYYY-MM",
+  "defaultFrequency": "monthly"
+}

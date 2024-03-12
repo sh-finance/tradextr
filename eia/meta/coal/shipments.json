@@ -1,0 +1,37 @@
+{
+  "id": "shipments",
+  "name": "Coal Shipments",
+  "description": "EIA shipments of coal data",
+  "routes": [
+    {
+      "id": "mine-state-aggregates",
+      "name": "Mine State Aggregates",
+      "description": "Coal shipments aggregated at state-level data, including price, \r\n        quantity, quality, and rank.  Source: EIA Form 7A and MSHA Form 7000-2.  Interactive browser:  \r\n        https://www.eia.gov/coal/data/browser/"
+    },
+    {
+      "id": "receipts",
+      "name": "Receipts",
+      "description": "Coal shipment detailed by reciepient data, including transportation type, \r\n        supplier, mine, coal basin, county, state, rank, contract type, price, quantity, and quality. \r\n        Source: EIA Form 7A and MSHA Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/"
+    },
+    {
+      "id": "mine-aggregates",
+      "name": "Mine Aggregates",
+      "description": "Coal shipments aggregated at mine-level data, \r\n        including price, quantity, quality, and rank.  Source: EIA Form 7A and \r\n        MSHA Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/"
+    },
+    {
+      "id": "plant-state-aggregates",
+      "name": "Plant State Aggregates",
+      "description": "Coal reciepts aggregated at state-level data, including price, \r\n        quantity, quality, and rank.  Source: EIA Form 7A and MSHA Form 7000-2.  Interactive \r\n        browser:  https://www.eia.gov/coal/data/browser/"
+    },
+    {
+      "id": "plant-aggregates",
+      "name": "Plant Aggregates",
+      "description": "Coal reciepts aggregated to plant-level data, \n        including price, quantity, quality, and rank.  Source: EIA Form 7A \n            and MSHA Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/"
+    },
+    {
+      "id": "by-mine-by-plant",
+      "name": "By Mine, By Plant",
+      "description": "Coal shipments from mine- to plant-level data, including price, quantity, quality, and rank.  Source: EIA Form 7A and MSHA Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/"
+    }
+  ]
+}

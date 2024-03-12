@@ -1,0 +1,36 @@
+{
+  "id": "co2-emissions-aggregates",
+  "name": "Total CO2 Emissions by Sector and Fuel",
+  "description": "CO2 emission aggregates by fuel, state, and sector.  Report and documentation: https://www.eia.gov/environment/emissions/state/",
+  "frequency": [
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "sectorId",
+      "description": "Sector"
+    },
+    {
+      "id": "fuelId",
+      "description": "Fuel Type"
+    },
+    {
+      "id": "stateId",
+      "description": "State"
+    }
+  ],
+  "data": {
+    "value": {
+      "units": "million metric tons of CO2"
+    }
+  },
+  "startPeriod": "1970",
+  "endPeriod": "2021",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "sum",
+  "name": "Natural Gas, Summary",
+  "description": "Natural Gas, Summary",
+  "routes": [
+    {
+      "id": "snd",
+      "name": "Natural Gas Annual Supply & Disposition by State",
+      "description": "Balancing Item volumes are equal to total disposition minus total supply."
+    },
+    {
+      "id": "lsum",
+      "name": "Natural Gas Summary",
+      "description": "Prices are in nominal dollars. Through 2001, electric power price data are for regulated electric utilities only; beginning in 2002, data also include nonregulated members of the electric power sector. Monthly preliminary (from January 2018 to present) state-level data for the production series, except marketed production, are not available until after the final annual reports for this series is collected and processed. Final annual data are generally available in the third quarter of the following year. Gas volumes delivered for use as vehicle fuel are included in the State annual totals through 2010 but not in the State monthly components. Gas volumes delivered for vehicle fuel are included in the State monthly totals from January 2011 forward. As of report year 2021, well count data have been discontinued. The latest natural gas well count data can be found at <a href ='https://www.eia.gov/petroleum/wells/' class='reg'>U.S. Oil and Natural Gas Wells by Production Rate</a>."
+    },
+    {
+      "id": "sndm",
+      "name": "U.S. Natural Gas Monthly Supply and Disposition Balance",
+      "description": "Balancing item represents quantities lost and imbalances in the data due to differences among data sources."
+    }
+  ]
+}

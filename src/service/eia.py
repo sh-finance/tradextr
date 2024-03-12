@@ -1,3 +1,5 @@
+import json
+import os
 import requests
 
 from datetime import date
@@ -96,7 +98,7 @@ class EIAService:
         route: 具体路由, 通过请求不带/data的url获取 `https://api.eia.gov/v2`
         """
         query = query or Query()
-        urlSegments = [EIA.base_url, route.strip("/"), data and "/data" or ""]
+        urlSegments = [EIA.base_url, route.strip(os.path.sep), data and "/data" or ""]
         queries = [f"api_key={EIAService.key()}"]
         if query.frequency:
             queries.append(f"frequency={query.frequency}")
@@ -223,7 +225,7 @@ class EIAService:
                     logger.warning(f"sub_route_id is empty: {sub_route_id}")
                     continue
                 EIAService.recursive_fetch_and_store_data(
-                    "/".join([route, sub_route_id])
+                    os.path.sep.join([route, sub_route_id])
                 )
         else:
             data = meta.get("data", {})
@@ -232,3 +234,38 @@ class EIAService:
                 frequency_id = frequency.get("id", "")
                 query = Query(frequency=frequency_id, data=data_keys)
                 EIAService.fetch_and_store_data(route=route, query=query)
+
+    @staticmethod
+    def recursive_fetch_and_store_meta(route: str = ""):
+        meta = EIAService.fetch_meta(route)
+        logger.info(route)
+        # meta写入到本地
+        sub_path = route.strip(os.path.sep) or "index"
+        sub_dir = sub_path.split(os.path.sep)[:-1]
+        sub_filename = sub_path.split(os.path.sep)[-1]
+        dir_path = os.path.abspath(
+            os.path.join(
+                os.path.abspath(os.path.dirname(__file__)),
+                "..",
+                "..",
+                "eia",
+                "meta",
+                *sub_dir,
+            )
+        )
+        full_path = os.path.abspath(os.path.join(dir_path, f"{sub_filename}.json"))
+        os.makedirs(dir_path, exist_ok=True)
+        with open(full_path, "w") as file:
+            file.write(json.dumps(meta, indent=2))
+            file.write("\n")
+
+        routes = meta.get("routes", [])
+        if routes:
+            for sub_route in routes:
+                sub_route_id = sub_route.get("id", "")
+                if not sub_route_id:
+                    logger.warning(f"sub_route_id is empty: {sub_route_id}")
+                    continue
+                EIAService.recursive_fetch_and_store_meta(
+                    os.path.sep.join([route, sub_route_id])
+                )

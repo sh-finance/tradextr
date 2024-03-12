@@ -1,0 +1,32 @@
+{
+  "id": "total-energy",
+  "name": "Total Energy",
+  "description": "These data represent the most recent comprehensive energy statistics integrated across all energy sources.  The data includes total energy production, consumption, stocks, and trade; energy prices; overviews of petroleum, natural gas, coal, electricity, nuclear energy, renewable energy, and carbon dioxide emissions; and data unit conversions values.  Source: https://www.eia.gov/totalenergy/data/monthly/pdf/mer_a_doc.pdf  Report:  MER (https://www.eia.gov/totalenergy/data/monthly/)",
+  "frequency": [
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    },
+    {
+      "id": "monthly",
+      "description": "One data point for each month.",
+      "query": "M",
+      "format": "YYYY-MM"
+    }
+  ],
+  "facets": [
+    {
+      "id": "msn",
+      "description": "Unique series identifier"
+    }
+  ],
+  "data": {
+    "value": []
+  },
+  "startPeriod": "1949-01",
+  "endPeriod": "2121-12",
+  "defaultDateFormat": "YYYY-MM",
+  "defaultFrequency": "monthly"
+}

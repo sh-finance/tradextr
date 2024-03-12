@@ -1,0 +1,32 @@
+{
+  "id": "cons",
+  "name": "Natural Gas, Consumption / End Use",
+  "description": "Natural Gas, Consumption / End Use",
+  "routes": [
+    {
+      "id": "sum",
+      "name": "Natural Gas Consumption by End Use",
+      "description": "Gas volumes delivered for use as vehicle fuel are included in the State annual totals through 2009 but not in the State monthly components. Estimates of gas volumes delivered for use as vehicle fuel are included in the State monthly totals for January 2010 forward. Gas volumes delivered for use as vehicle fuel are included in the State annual totals through 2009 but not in the State monthly components. Estimates of gas volumes delivered for use as vehicle fuel are included in the State monthly totals for January 2010 forward. The Electric Power Annual publication is typically released after the Natural Gas Annual Publication, and as a result, the most recent complete year shown in the Natural Gas Annual publication reflects preliminary volumes and prices in the electric sector. These preliminary figures are not finalized until the release of the following Natural Gas Annual."
+    },
+    {
+      "id": "num",
+      "name": "Number of Natural Gas Consumers",
+      "description": "Sales consumers buy their gas from the company that delivered it to them.  Transported consumers buy their gas from a company other than the one that delivered it to them.  <br><br>Beginning in 1996, consumption of natural gas for agricultural use was classified as industrial use.  In 1995 and earlier years, agricultural use was classified as commercial use."
+    },
+    {
+      "id": "pns",
+      "name": "Share of Total U.S. Natural Gas Delivered to Consumers",
+      "description": "Beginning in 1996, consumption of natural gas for agricultural use was classified as industrial use.  In 1995 and earlier years, agricultural use was classified as commercial use.From 1967 through 1979, data for the District of Columbia are included with data for Maryland.From 1967 through 1979, data for New Hamshire and Vermont are included with data for Maine."
+    },
+    {
+      "id": "acct",
+      "name": "Natural Gas Delivered for the Account of Others",
+      "description": "Natural gas that is &quot;delivered for the account of others&quot; is gas that is not owned by the company that delivers it to the consumer. <br><br> Beginning in 1996, consumption of natural gas for agricultural use was classified as industrial use.  In 1995 and earlier years, agricultural use was classified as commercial use."
+    },
+    {
+      "id": "heat",
+      "name": "Heat Content of Natural Gas Consumed",
+      "description": null
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "mine-production",
+  "name": "Mine Production",
+  "description": "Coal mine-level data, including production, region, state, \r\n        county, rank, status, type, name and description.  Source: EIA Form 7A and MSHA \r\n        Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/",
+  "frequency": [
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "mineMSHAId",
+      "description": "Mine"
+    },
+    {
+      "id": "stateId",
+      "description": "State"
+    },
+    {
+      "id": "regionId",
+      "description": "Region"
+    },
+    {
+      "id": "supplyRegionId",
+      "description": "Supply Region"
+    },
+    {
+      "id": "censusRegionId",
+      "description": "Census Region"
+    },
+    {
+      "id": "mississippiRegionId",
+      "description": "Mississippi Region"
+    },
+    {
+      "id": "mineCountyId",
+      "description": "Mine County"
+    },
+    {
+      "id": "coalRankId",
+      "description": "Coal Rank"
+    },
+    {
+      "id": "mineTypeId",
+      "description": "Mine Type"
+    },
+    {
+      "id": "mineStatusId",
+      "description": "Mine Status"
+    }
+  ],
+  "data": {
+    "production": {
+      "units": "short tons"
+    },
+    "labor-hours": {
+      "units": "hours"
+    },
+    "average-employees": {
+      "units": "number of employees"
+    },
+    "refuse-flag": [],
+    "latitude": [],
+    "longitude": [],
+    "operating-company": [],
+    "operating-company-address": []
+  },
+  "startPeriod": "2001",
+  "endPeriod": "2022",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

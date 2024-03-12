@@ -1,0 +1,47 @@
+{
+  "id": "densified-biomass",
+  "name": "Densified Biomass",
+  "description": "EIA densified biomass data",
+  "routes": [
+    {
+      "id": "capacity-by-region",
+      "name": "Capacity by Region",
+      "description": "Densified biomass capacity includes number of facilities \r\n        and number of employees.  Source: EIA-63C  Report:  www.eia.gov/biomass/"
+    },
+    {
+      "id": "sales-and-price-by-region",
+      "name": "Sales and Price by Region",
+      "description": "Densified biomass sales and average price by region.  \r\n        Source: EIA-63C  Report:  www.eia.gov/biomass/"
+    },
+    {
+      "id": "export-sales-and-price",
+      "name": "Export Sales and Price",
+      "description": "Densified biomass export prices and quantity.  \r\n        Source: EIA-63C  Report:  www.eia.gov/biomass/"
+    },
+    {
+      "id": "feedstocks-and-cost",
+      "name": "Feedstocks and Costs",
+      "description": "Densified biomass feedstocks and cost by type.  \r\n        Source: EIA-63C  Report:  www.eia.gov/biomass/"
+    },
+    {
+      "id": "production-by-region",
+      "name": "Production by Region",
+      "description": "Densified biomass production by region and fuel type.  \r\n        Source: EIA-63C  Report:  www.eia.gov/biomass/"
+    },
+    {
+      "id": "characteristics-by-region",
+      "name": "Characteristics by Region",
+      "description": "Densified biomass characteristics includes \r\n        fuel type, average ash, heat, and moisture content by region. \r\n        Source: EIA-63C  Report:  www.eia.gov/biomass/"
+    },
+    {
+      "id": "inventories-by-region",
+      "name": "Inventories by Region",
+      "description": "Densified biomass inventories by region and fuel type.  \r\n        Source: EIA-63C  Report:  www.eia.gov/biomass/"
+    },
+    {
+      "id": "wood-pellet-plants",
+      "name": "Wood Pellet Plant Capacity",
+      "description": "Details on wood pellet plants includes region, respondent, \r\n    capacity, and status.  Source: EIA-63C  Report:  www.eia.gov/biomass/"
+    }
+  ]
+}

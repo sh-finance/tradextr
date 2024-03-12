@@ -1,0 +1,49 @@
+{
+  "id": "exports-imports-quantity-price",
+  "name": "Exports\\Imports Quantity\\Price",
+  "description": "Coal import/export data, including price, quantity, country, \r\n        rank, and customs district.  Source: EIA Form 7A and MSHA Form 7000-2.  Interactive \r\n        browser:  https://www.eia.gov/coal/data/browser/",
+  "frequency": [
+    {
+      "id": "quarterly",
+      "description": "One data point every 3 months.",
+      "query": "Q",
+      "format": "YYYY-\"Q\"Q"
+    },
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "exportImportType",
+      "description": "Export\\Import Type"
+    },
+    {
+      "id": "coalRankId",
+      "description": "Coal Rank"
+    },
+    {
+      "id": "countryId",
+      "description": "Country"
+    },
+    {
+      "id": "customsDistrictId",
+      "description": "Customs District"
+    }
+  ],
+  "data": {
+    "quantity": {
+      "units": "short tons"
+    },
+    "price": {
+      "units": "dollars per short ton"
+    }
+  },
+  "startPeriod": "2000",
+  "endPeriod": "2022",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

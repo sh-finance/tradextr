@@ -1,0 +1,117 @@
+{
+  "id": "pri",
+  "name": "Petroleum, Prices",
+  "description": "Petroleum, Prices",
+  "routes": [
+    {
+      "id": "gnd",
+      "name": "Weekly Retail Gasoline and Diesel Prices",
+      "description": "Conventional area is any area that does not require the sale of reformulated gasoline. All types of finished motor gasoline may be sold in this area. RFG area is an ozone nonattainment area designated by the U.S. Environmental Protection Agency (EPA), which requires the use of reformulated gasoline. We stopped publishing Low Sulfur On-Highway Diesel (LSD) prices at the U.S. level on December 8, 2008, because fewer stations were selling LSD as a result of EPA diesel fuel regulations. We continued to collect LSD prices from retail outlets and included them in the Diesel Average All Types price until July 26, 2010, when no more outlets reported LSD sales. Beginning July 26, 2010, publication of Ultra Low Sulfur Diesel (ULSD) price became fully represented by the Diesel Average All Types price. As of December 1, 2010 (September 1, 2006 in California), any on-highway diesel fuel sold is ULSD as mandated by EPA on-highway diesel fuel regulations. We did not collect weekly retail motor gasoline data between December 10, 1990, and January 14, 1991. Monthly and annual averages are simple averages of the weekly data. For months and years with incomplete weekly data series, the monthly and/or annual averages are not available. On May 14, 2018, we implemented <a href ='https://www.eia.gov/petroleum/gasdiesel/gas_proc-methods.php' class='reg'>statistical methodology changes</a> to improve the accuracy of the weekly retail gasoline price estimates. As a result of these statistical methodology changes, the published retail gasoline estimates for May 14, 2018, are not directly comparable to those published for May 7, 2018. On June 13, 2022, we implemented <a href ='https://www.eia.gov/petroleum/gasdiesel/diesel_proc-methods.php' class='reg'>statistical methodology changes</a> to improve the accuracy of the weekly retail on-highway diesel fuel price estimates. As a result of these statistical methodology changes, the published retail on-highway diesel fuel prices for June 13, 2022 are not directly comparable to those published for June 6, 2022."
+    },
+    {
+      "id": "spt",
+      "name": "Spot Prices",
+      "description": "Weekly, monthly, and annual prices are calculated by EIA from daily data by    taking an unweighted average of the daily closing spot prices for a given product over the specified time period."
+    },
+    {
+      "id": "fut",
+      "name": "NYMEX Futures Prices",
+      "description": "Official daily closing prices at 2:30 p.m. from the trading floor of the New York Mercantile Exchange (NYMEX) for a specific delivery month for each product listed."
+    },
+    {
+      "id": "wfr",
+      "name": "Weekly Heating Oil and Propane Prices (October - March)",
+      "description": "Weekly heating oil and propane prices are only collected during the heating season which extends from October through March. Due to updated weighting methodology, national and regional residential heating oil and propane prices from October 2009 to March 2013 have been revised since they were first published. See <a href ='http://www.eia.gov/dnav/pet/xls/SHOPPWeightingDifferences2013.xls' class='reg'>Excel spreadsheet</a> for changes to published data. Values shown for the previous week may be revised to account for late submissions and corrections."
+    },
+    {
+      "id": "refmg",
+      "name": "Refiner Gasoline Prices by Grade and Sales Type",
+      "description": "&quot;Sales to End Users, Average&quot; includes sales through retail outlets as well as all direct sales to end users that were not made through company-operated retail outlets, e.g., sales to agricultural customers, commercial sales, and industrial sales. Values shown for the current month are preliminary. Values shown for the previous month may be revised to account for late submissions and corrections and are considered final. Annual averages will be available in the April Petroleum Marketing Monthly."
+    },
+    {
+      "id": "refmg2",
+      "name": "U.S. Refiner Gasoline Prices by Formulation, Grade, Sales Type",
+      "description": "&quot;Sales to End Users, Average&quot; includes sales through retail outlets as well as all direct sales to end users that were not made through company-operated retail outlets, e.g., sales to agricultural customers, commercial sales, and industrial sales.  Beginning January 2007, oxygenated gasoline is included in conventional gasoline.  Values shown for the current month are preliminary. Values shown for the previous month may be revised to account for late submissions and corrections and are considered final. Annual averages will be available in the April Petroleum Marketing Monthly."
+    },
+    {
+      "id": "refoth",
+      "name": "Refiner Petroleum Product Prices by Sales Type",
+      "description": "Values shown for the current month are preliminary. Values shown for the previous month may be revised to account for late submissions and corrections and are considered final. Annual averages will be available in the April Petroleum Marketing Monthly."
+    },
+    {
+      "id": "allmg",
+      "name": "Gasoline Prices by Formulation, Grade, Sales Type",
+      "description": "Values shown for the current month for regular gasoline at the U.S. and PADD levels in the retail outlets and sales for resale categories are initial estimates calculated using prior history of the series as well as present and past values of other related time series.  For all other data, values shown for the current month are preliminary. Values shown for the previous month may be revised to account for late submissions and corrections and are considered final. Annual averages will be available in the April Petroleum Marketing Monthly.  &quot; Sales to End Users, Average&quot; includes sales through retail outlets as well as all direct sales to end users that were not made through company-operated retail outlets, e.g., sales to agricultural customers, commercial sales, and industrial sales. Beginning January 2007, oxygenated gasoline is included in conventional gasoline."
+    },
+    {
+      "id": "dist",
+      "name": "No. 2 Distillate Prices by Sales Type",
+      "description": "Values shown in the current month for No. 2 Distillate at the U.S. and PADD levels in the residential, retail outlets, and sales for resale categories are initial estimates calculated using prior history of the series as well as present and past values of other related time series.   For all other data, values shown for the current two months are preliminary for No. 2 Distillate in the \"residential\", \"through retail outlets\", and \"sales for resale\" categorieat the U.S. and PAD District levels.In these cases, values for the current month are initial estimates calculated using prior history of the seriesas well as present and past values of other related time series, such as spot prices andheating degree days.For all other data, values shown for the current month are preliminary. Values shown for the previous month may be revised to account for late submissions and corrections and are considered final. Annual averages will be available in the April Petroleum Marketing Monthly. All on-highway diesel must be ultra low-sulfur as of December 1, 2010."
+    },
+    {
+      "id": "prop",
+      "name": "Propane (Consumer Grade) Prices by Sales Type",
+      "description": "Values shown for the current month are preliminary. Values shown for the previous month may be revised to account for late submissions and corrections and are considered final. Annual averages will be available in the April Petroleum Marketing Monthly."
+    },
+    {
+      "id": "resid",
+      "name": "Residual Fuel Oil Prices by Sales Type",
+      "description": "Values of U.S. residual fuel oil for the current month are initial estimates calculated using prior history of the series as well as present and past values of other related time series.For all other data, values shown for the current month are preliminary. Values shown for the previous month may be revised to account for late submissions and corrections and are considered final. Annual averages will be available in the April Petroleum Marketing Monthly.Some State data are not sufficient for publication, but are used in calculating the PAD District average."
+    },
+    {
+      "id": "dfp1",
+      "name": "Domestic Crude Oil First Purchase Prices by Area",
+      "description": "Values shown for the current month are preliminary. Values shown for the previous month may be revised to account for late submissions and corrections  Final revisions to monthly and annual values are available upon publication of the June Petroleum Marketing Monthly. Annual averages that precede the release of the June Petroleum Marketing Monthly are calculated from monthly data. Data through 2022 are final. The actual domestic average price represents the average price at the lease (or wellhead) atwhich domestic crude oil is purchased."
+    },
+    {
+      "id": "dfp2",
+      "name": "Domestic Crude Oil First Purchase Prices for Selected Crude Streams",
+      "description": "Values shown for the current month are preliminary. Values shown for the previous month may be revised to account for late submissions and corrections. Final revisions to monthly and annual values are available upon publication of the June Petroleum Marketing Monthly. Annual averages that precede the release of the June Petroleum Marketing Monthly are calculated from monthly data.  Data through 2022 are final."
+    },
+    {
+      "id": "dfp3",
+      "name": "Domestic Crude Oil First Purchase Prices by API Gravity",
+      "description": "Values shown for the current month are preliminary. Values shown for the previous month may be revised to account for late submissions and corrections. Final revisions to monthly and annual values are available upon publication of the June Petroleum Marketing Monthly. Annual averages that precede the release of the June Petroleum Marketing Monthly are calculated from monthly data. Data through 2022 are final."
+    },
+    {
+      "id": "rac2",
+      "name": "Refiner Acquisition Cost of Crude Oil",
+      "description": "Values shown for the U.S. in the current month are initial estimates calculated using prior history of the series as well as present and past values of other related time series.For all other data, values shown for the current month are preliminary. Values shown for the previous month may be revised to account for late submissions and corrections. Final revisions to monthly and annual values are available upon publication of the June Petroleum Marketing Monthly. Annual averages that precede the release of the June Petroleum Marketing Monthly are calculated from monthly data. Data through 2022 are final. U.S. is defined as the 50 states, the District of Columbia, Puerto Rico, the Virgin Islands, and all American territories and possessions.  Values reflect the PAD District in which the crude oil is intended to be refined."
+    },
+    {
+      "id": "imc1",
+      "name": "F.O.B. Costs of Imported Crude Oil by Area",
+      "description": "Values shown for the current two months are preliminary. Values shown for the previous two months may be revised to account for late submissions and corrections. Final revisions to monthly and annual values are available upon publication of the June Petroleum Marketing Monthly. Annual averages that precede the release of the June Petroleum Marketing Monthly are calculated from monthly data. Data through 2022 are final."
+    },
+    {
+      "id": "imc2",
+      "name": "F.O.B. Costs of Imported Crude Oil for Selected Crude Streams",
+      "description": "Values shown for the current two months are preliminary. Values shown for the previous two months may be revised to account for late submissions and corrections. Final revisions to monthly and annual values are available upon publication of the June Petroleum Marketing Monthly. Annual averages that precede the release of the June Petroleum Marketing Monthly are calculated from monthly data. Data through 2022 are final. Effective January 2009, selected crude streams were discontinued and new crude streams were added."
+    },
+    {
+      "id": "imc3",
+      "name": "F.O.B. Costs of Imported Crude Oil by API Gravity",
+      "description": "Values shown for the current two months are preliminary. Values shown for the previous two months may be revised to account for late submissions and corrections. Final revisions to monthly and annual values are available upon publication of the June Petroleum Marketing Monthly. Annual averages that precede the release of the June Petroleum Marketing Monthly are calculated from monthly data.  Data through 2022 are final."
+    },
+    {
+      "id": "land1",
+      "name": "Landed Costs of Imported Crude by Area",
+      "description": "Values shown for the current two months are preliminary. Values shown for the previous two months may be revised to account for late submissions and corrections. Final revisions to monthly and annual values are available upon publication of the June Petroleum Marketing Monthly. Annual averages that precede the release of the June Petroleum Marketing Monthly are calculated from monthly data. Data through 2022 are final."
+    },
+    {
+      "id": "land2",
+      "name": "Landed Costs of Imported Crude for Selected Crude Streams",
+      "description": "Values shown for the current two months are preliminary. Values shown for the previous two months may be revised to account for late submissions and corrections. Final revisions to monthly and annual values are available upon publication of the June Petroleum Marketing Monthly. Annual averages that precede the release of the June Petroleum Marketing Monthly are calculated from monthly data. Data through 2022 are final. Effective January 2009, selected crude streams were discontinued and new crude streams were added."
+    },
+    {
+      "id": "land3",
+      "name": "Landed Costs of Imported Crude by API Gravity",
+      "description": "Values shown for the current two months are preliminary. Values shown for the previous two months may be revised to account for late submissions and corrections. Final revisions to monthly and annual values are available upon publication of the June Petroleum Marketing Monthly. Annual averages that precede the release of the June Petroleum Marketing Monthly are calculated from monthly data.  Data through 2022 are final."
+    },
+    {
+      "id": "ipct",
+      "name": "Percentages of Total Imported Crude Oil by API Gravity",
+      "description": "Values shown for the current two months are preliminary. Values for the previous months are revised.  Data are final upon publication in the  Petroleum Marketing Annual."
+    }
+  ]
+}

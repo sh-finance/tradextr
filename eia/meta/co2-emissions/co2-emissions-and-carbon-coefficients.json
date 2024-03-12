@@ -1,0 +1,43 @@
+{
+  "id": "co2-emissions-and-carbon-coefficients",
+  "name": "CO2 Emissions and Carbon Coefficients by Product",
+  "description": "CO2 emissions and carbon coefficients by fuel, state, and sector. Report and documentation: https://www.eia.gov/environment/emissions/state/",
+  "frequency": [
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "seriesId",
+      "description": "Series"
+    },
+    {
+      "id": "sectorId",
+      "description": "Sector"
+    },
+    {
+      "id": "fuelId",
+      "description": "Fuel Type"
+    },
+    {
+      "id": "stateId",
+      "description": "State"
+    }
+  ],
+  "data": {
+    "emissions": {
+      "units": "CO2 metric tons"
+    },
+    "carbon-coefficient": {
+      "units": "Kilograms of CO2 per million Btu"
+    }
+  },
+  "startPeriod": "1980",
+  "endPeriod": "2018",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

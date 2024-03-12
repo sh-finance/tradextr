@@ -1,0 +1,32 @@
+{
+  "id": "stor",
+  "name": "Natural Gas, Storage",
+  "description": "Natural Gas, Storage",
+  "routes": [
+    {
+      "id": "wkly",
+      "name": "Weekly Working Gas in Underground Storage",
+      "description": "This table tracks U.S. natural gas inventories held in underground storage facilities. The weekly stocks generally are the volumes of working gas as of the report date. Changes in reported stock levels reflect all events affecting working gas in storage, including injections, withdrawals, and reclassifications between base and working gas, including information on estimated measures of sampling variability for the most current published estimates of weekly stocks and their net changes."
+    },
+    {
+      "id": "sum",
+      "name": "Underground Natural Gas Storage by All Operators",
+      "description": "Change in Working Gas from Same Period, Previous Year, includes data for Alaska which had no working gas recorded for periods prior to January 2013."
+    },
+    {
+      "id": "type",
+      "name": "U.S. Underground Natural Gas Storage by Storage Type",
+      "description": "Positive net withdrawals indicate the volume of withdrawals in excess of injections. Negative net withdrawals indicate the volume of injections in excess of withdrawals. <br><br>"
+    },
+    {
+      "id": "lng",
+      "name": "Liquefied Natural Gas Additions to and Withdrawals from Storage",
+      "description": "Positive net withdrawals indicate the volume of withdrawals in excess of injections. Negative net withdrawals indicate the volume of injections in excess of withdrawals."
+    },
+    {
+      "id": "cap",
+      "name": "Underground Natural Gas Storage Capacity",
+      "description": "Existing fields include both active and inactive fields."
+    }
+  ]
+}

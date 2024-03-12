@@ -1,0 +1,38 @@
+{
+  "id": "characteristics-by-region",
+  "name": "Characteristics by Region",
+  "description": "Densified biomass characteristics includes \r\n        fuel type, average ash, heat, and moisture content by region. \r\n        Source: EIA-63C  Report:  www.eia.gov/biomass/",
+  "frequency": [
+    {
+      "id": "monthly",
+      "description": "One data point for each month.",
+      "query": "M",
+      "format": "YYYY-MM"
+    }
+  ],
+  "facets": [
+    {
+      "id": "fuelTypeId",
+      "description": "Fuel Type"
+    },
+    {
+      "id": "region",
+      "description": "Region"
+    }
+  ],
+  "data": {
+    "average-heat": {
+      "units": "btu/lb"
+    },
+    "average-ash": {
+      "units": "percent by weight"
+    },
+    "average-moisture": {
+      "units": "percent by weight"
+    }
+  },
+  "startPeriod": "2016-01",
+  "endPeriod": "2023-12",
+  "defaultDateFormat": "YYYY-MM",
+  "defaultFrequency": "monthly"
+}

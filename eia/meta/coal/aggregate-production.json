@@ -1,0 +1,48 @@
+{
+  "id": "aggregate-production",
+  "name": "Aggregate Production",
+  "description": "Coal state aggregated data by mine type, includes production, \r\n        productivity, labor hours, employees, and coal rank.  Source: EIA Form 7A and MSHA Form \r\n        7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/",
+  "frequency": [
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "stateRegionId",
+      "description": "State\\Region"
+    },
+    {
+      "id": "coalRankId",
+      "description": "Coal Rank"
+    },
+    {
+      "id": "mineTypeId",
+      "description": "Mine Type"
+    }
+  ],
+  "data": {
+    "production": {
+      "units": "short tons"
+    },
+    "number-of-mines": {
+      "units": "number of mines"
+    },
+    "labor-hours": {
+      "units": "hours"
+    },
+    "average-employees": {
+      "units": "number of employees"
+    },
+    "productivity": {
+      "units": "short tons per labor hour"
+    }
+  },
+  "startPeriod": "2001",
+  "endPeriod": "2022",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

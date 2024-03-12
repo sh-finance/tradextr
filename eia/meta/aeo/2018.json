@@ -1,0 +1,41 @@
+{
+  "id": "AEO2018",
+  "description": "Annual Energy Outlook 2018",
+  "frequency": [
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "history",
+      "description": "History"
+    },
+    {
+      "id": "scenario",
+      "description": "Scenario"
+    },
+    {
+      "id": "tableId",
+      "description": "Table"
+    },
+    {
+      "id": "seriesId",
+      "description": "Series"
+    },
+    {
+      "id": "regionId",
+      "description": "Region"
+    }
+  ],
+  "data": {
+    "value": []
+  },
+  "startPeriod": "2016",
+  "endPeriod": "2050",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

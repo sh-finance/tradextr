@@ -1,0 +1,32 @@
+{
+  "id": "inventories-by-region",
+  "name": "Inventories by Region",
+  "description": "Densified biomass inventories by region and fuel type.  \r\n        Source: EIA-63C  Report:  www.eia.gov/biomass/",
+  "frequency": [
+    {
+      "id": "monthly",
+      "description": "One data point for each month.",
+      "query": "M",
+      "format": "YYYY-MM"
+    }
+  ],
+  "facets": [
+    {
+      "id": "fuelTypeId",
+      "description": "Fuel Type"
+    },
+    {
+      "id": "region",
+      "description": "Region"
+    }
+  ],
+  "data": {
+    "inventory": {
+      "unit": "tons"
+    }
+  },
+  "startPeriod": "2016-01",
+  "endPeriod": "2023-12",
+  "defaultDateFormat": "YYYY-MM",
+  "defaultFrequency": "monthly"
+}

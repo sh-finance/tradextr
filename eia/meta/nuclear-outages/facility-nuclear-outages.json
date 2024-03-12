@@ -1,0 +1,34 @@
+{
+  "id": "facility-nuclear-outages",
+  "name": "Facility Level Nuclear Outages",
+  "description": "Facility level nuclear outages with capacity, outages, and percent outage.  \n        Source:   Nuclear Regulatory Commission's Power Reactor Status Report.  \n        Interactive data report:  Daily Status of Nuclear Reactors.",
+  "frequency": [
+    {
+      "id": "daily",
+      "description": "One data point for each day.",
+      "query": "D",
+      "format": "YYYY-MM-DD"
+    }
+  ],
+  "facets": [
+    {
+      "id": "facility",
+      "description": "Plant code"
+    }
+  ],
+  "data": {
+    "capacity": {
+      "units": "megawatts"
+    },
+    "outage": {
+      "units": "megawatts"
+    },
+    "percentOutage": {
+      "units": "percent"
+    }
+  },
+  "startPeriod": "2007-01-01",
+  "endPeriod": "2024-03-11",
+  "defaultDateFormat": "YYYY-MM-DD",
+  "defaultFrequency": "daily"
+}

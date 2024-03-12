@@ -1,0 +1,22 @@
+{
+  "id": "nuclear-outages",
+  "name": "Nuclear Outages",
+  "description": "EIA nuclear outages survey data",
+  "routes": [
+    {
+      "id": "us-nuclear-outages",
+      "name": "U.S. Nuclear Outages",
+      "description": "Nuclear outages daily with capacity, outages, and percent outage.  \n        Source:   Nuclear Regulatory Commission's Power Reactor Status Report.  \n        Interactive data report:  Daily Status of Nuclear Reactors."
+    },
+    {
+      "id": "generator-nuclear-outages",
+      "name": "Generator Level Nuclear Outages",
+      "description": "Generator level nuclear outages with capacity, outages, and percent outage.  \n        Source:   Nuclear Regulatory Commission's Power Reactor Status Report.  \n        Interactive data report:  Daily Status of Nuclear Reactors."
+    },
+    {
+      "id": "facility-nuclear-outages",
+      "name": "Facility Level Nuclear Outages",
+      "description": "Facility level nuclear outages with capacity, outages, and percent outage.  \n        Source:   Nuclear Regulatory Commission's Power Reactor Status Report.  \n        Interactive data report:  Daily Status of Nuclear Reactors."
+    }
+  ]
+}

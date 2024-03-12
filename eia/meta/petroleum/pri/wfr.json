@@ -1,0 +1,43 @@
+{
+  "id": "petroleum",
+  "description": "EIA petroleum gas survey data",
+  "frequency": [
+    {
+      "id": "monthly",
+      "description": "One data point for each month.",
+      "query": "M",
+      "format": "YYYY-MM"
+    },
+    {
+      "id": "weekly",
+      "description": "One data point for each week.",
+      "query": "W",
+      "format": "YYYY-MM-DD"
+    }
+  ],
+  "facets": [
+    {
+      "id": "duoarea",
+      "description": "DuoArea"
+    },
+    {
+      "id": "product",
+      "description": "Product"
+    },
+    {
+      "id": "process",
+      "description": "Process"
+    },
+    {
+      "id": "series",
+      "description": "Series"
+    }
+  ],
+  "data": {
+    "value": []
+  },
+  "startPeriod": "1990-10-01",
+  "endPeriod": "2024-03-04",
+  "defaultDateFormat": "YYYY-MM-DD",
+  "defaultFrequency": "weekly"
+}

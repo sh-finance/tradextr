@@ -1,0 +1,37 @@
+{
+  "id": "move",
+  "name": "Natural Gas, Imports and Exports/Pipelines",
+  "description": "Natural Gas, Imports and Exports/Pipelines",
+  "routes": [
+    {
+      "id": "impc",
+      "name": "U.S. Natural Gas Imports by Country",
+      "description": "Prices for LNG imports are reported as &quot;landed,&quot; received at the terminal, or &quot;tailgate,&quot; after regasification at the terminal. Generally, the reporting of LNG import prices varies by point of entry, and the average prices are calculated from a combination of both types of prices. For the &quot;Other&quot; area the point of origin for volumes of imported LNG was unassigned in the reports to the Office of Fossil Energy. CNG = Compressed Natural Gas: Natural gas compressed to a pressure at or above 200-248 bar (i.e., 2900-3600 pounds per square inch) and stored in high-pressure containers."
+    },
+    {
+      "id": "expc",
+      "name": "U.S. Natural Gas Exports and Re-Exports by Country",
+      "description": "The price of LNG exports to Japan is the &quot;landed&quot; price, defined as received at the terminal in Japan. CNG = Compressed Natural Gas: Natural gas compressed to a pressure at or above 200-248 bar (i.e., 2900-3600 pounds per square inch) and stored in high-pressure containers. LNG re-exports are shipments of LNG to foreign countries that were previously imported, offloaded."
+    },
+    {
+      "id": "state",
+      "name": "U.S. Natural Gas Imports & Exports by State",
+      "description": "Prices for LNG imports are reported as &quot;landed,&quot; defined as received at the terminal, or &quot;tailgate,&quot; defined as after regasification at the terminal. Generally, all prices for shipments received at Everett, MA, are reported as landed and at Lake Charles, LA, as tailgate.   Estimates for Canadian pipeline volumes are derived from the Office of Fossil Energy, <em>Natural Gas Imports and Exports</em>, and EIA estimates of dry natural gas imports."
+    },
+    {
+      "id": "poe1",
+      "name": "U.S. Natural Gas Imports by Point of Entry",
+      "description": "LNG imports from Canada are delivered by truck."
+    },
+    {
+      "id": "poe2",
+      "name": "U.S. Natural Gas Exports and Re-Exports by Point of Exit",
+      "description": "LNG exports to Canada and Mexico are delivered by truck.  LNG shipments from Kenai Alaska are LNG exports.  Pipeline exports to Mexico for April 2015 at Clint and Rio Grande City in Texas were estimated"
+    },
+    {
+      "id": "ist",
+      "name": "International & Interstate Movements of Natural Gas by State",
+      "description": "Totals may not equal sum of components due to independent rounding."
+    }
+  ]
+}

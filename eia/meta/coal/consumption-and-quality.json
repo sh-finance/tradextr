@@ -1,0 +1,56 @@
+{
+  "id": "consumption-and-quality",
+  "name": "Consumption and Quality",
+  "description": "Coal consumption and quality data by state and sector, \n            including price, reciepts, heat content, sulfur content, ash content, and stocks. \n            Source: EIA Form 7A and MSHA Form 7000-2.  Interactive browser:  https://www.eia.gov/coal/data/browser/",
+  "frequency": [
+    {
+      "id": "quarterly",
+      "description": "One data point every 3 months.",
+      "query": "Q",
+      "format": "YYYY-\"Q\"Q"
+    },
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "location",
+      "description": "U.S. Total, States, and Census Regions."
+    },
+    {
+      "id": "sector",
+      "description": "Sector"
+    }
+  ],
+  "data": {
+    "receipts": {
+      "units": "short tons"
+    },
+    "consumption": {
+      "units": "short tons"
+    },
+    "stocks": {
+      "units": "short tons"
+    },
+    "price": {
+      "units": "dollars per short ton"
+    },
+    "heat-content": {
+      "units": "average sulfur percent by weight"
+    },
+    "sulfur-content": {
+      "units": "average sulfur percent by weight"
+    },
+    "ash-content": {
+      "units": "average ash percent by weight"
+    }
+  },
+  "startPeriod": "2000",
+  "endPeriod": "2023",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}

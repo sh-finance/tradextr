@@ -1,0 +1,34 @@
+{
+  "id": "capacity-by-region",
+  "name": "Capacity by Region",
+  "description": "Densified biomass capacity includes number of facilities \r\n        and number of employees.  Source: EIA-63C  Report:  www.eia.gov/biomass/",
+  "frequency": [
+    {
+      "id": "monthly",
+      "description": "One data point for each month.",
+      "query": "M",
+      "format": "YYYY-MM"
+    }
+  ],
+  "facets": [
+    {
+      "id": "region",
+      "description": "Region"
+    }
+  ],
+  "data": {
+    "number-of-facilities": {
+      "units": "number of facilities"
+    },
+    "capacity": {
+      "units": "tons"
+    },
+    "number-of-fte-employees": {
+      "units": "number of fte employees"
+    }
+  },
+  "startPeriod": "2016-01",
+  "endPeriod": "2023-12",
+  "defaultDateFormat": "YYYY-MM",
+  "defaultFrequency": "monthly"
+}

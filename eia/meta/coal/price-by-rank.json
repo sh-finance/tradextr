@@ -1,0 +1,32 @@
+{
+  "id": "price-by-rank",
+  "name": "Price by Rank",
+  "description": "Coal prices by rank data for region and state.  \r\n        Source: EIA Form 7A and MSHA Form 7000-2.  Interactive browser: \r\n        https://www.eia.gov/coal/data/browser/  ",
+  "frequency": [
+    {
+      "id": "annual",
+      "description": "One data point for each calendar year.",
+      "query": "A",
+      "format": "YYYY"
+    }
+  ],
+  "facets": [
+    {
+      "id": "stateRegionId",
+      "description": "State\\Region"
+    },
+    {
+      "id": "coalRankId",
+      "description": "Coal Rank"
+    }
+  ],
+  "data": {
+    "price": {
+      "units": "dollars per short ton"
+    }
+  },
+  "startPeriod": "2001",
+  "endPeriod": "2022",
+  "defaultDateFormat": "YYYY",
+  "defaultFrequency": "annual"
+}
