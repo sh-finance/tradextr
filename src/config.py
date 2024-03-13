@@ -37,3 +37,11 @@ class EIA:
 
 class EC:
     sitemap_url = "https://commission.europa.eu/sitemap.xml"
+    # 按照顺序从左到右依次尝试查找selector 将找到的元素内容作为页面内容
+    page_content_selector_priority = ["main", "body"]
+
+
+class IATA:
+    sitemap_url = "https://www.iata.org/sitemap.xml"
+    # 按照顺序从左到右依次尝试查找selector 将找到的元素内容作为页面内容
+    page_content_selector_priority = ["div.blog-detail-page", "main", "body"]

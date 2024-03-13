@@ -8,14 +8,14 @@ from service.spider import SpiderService
 from service.mongo import mongo
 from logger import logger
 
-ec_mongo = mongo["tradextr"]["ec"]
+iata_mongo = mongo["tradextr"]["iata"]
 
 
-class ECService:
+class IATAService:
     @staticmethod
     def fetch_sitemap_urls() -> list[str]:
         try:
-            page_content = SpiderService.fetch_static_page(config.EC.sitemap_url)
+            page_content = SpiderService.fetch_static_page(config.IATA.sitemap_url)
         except Exception as e:
             logger.error(e)
             return []
@@ -41,7 +41,11 @@ class ECService:
             sub_filename += ".html"
         dir_path = os.path.abspath(
             os.path.join(
-                os.path.abspath(os.path.dirname(__file__)), "..", "..", "ec", *sub_dirs
+                os.path.abspath(os.path.dirname(__file__)),
+                "..",
+                "..",
+                "iata",
+                *sub_dirs
             )
         )
         full_path = os.path.abspath(os.path.join(dir_path, sub_filename))
@@ -59,7 +63,7 @@ class ECService:
 
     @staticmethod
     def store_page_content(url: str, html: str, content: str):
-        ec_mongo.find_one_and_update(
+        iata_mongo.find_one_and_update(
             filter={"url": url},
             update={"$set": {"content": content, "html": html}},
             upsert=True,
@@ -68,14 +72,14 @@ class ECService:
 
     @staticmethod
     def fetch_sitemap_page_content():
-        urls = ECService.fetch_sitemap_urls()
+        urls = IATAService.fetch_sitemap_urls()
         for url in urls:
-            html, page_content = ECService.fetch_page_content(url)
-            if not page_content:
+            html, page_content = IATAService.fetch_page_content(url)
+            if not page_content and not html:
                 continue
             yield url, html, page_content
 
     @staticmethod
     def fetch_and_store_sitemap_page_content():
-        for url, html, page_content in ECService.fetch_sitemap_page_content():
-            ECService.store_page_content(url, html, page_content)
+        for url, html, page_content in IATAService.fetch_sitemap_page_content():
+            IATAService.store_page_content(url, html, page_content)

@@ -161,3 +161,4 @@ cython_debug/
 
 # EC Static Page
 /ec
+/iata
