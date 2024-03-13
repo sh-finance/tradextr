@@ -9,7 +9,7 @@ from service.iata import IATAService
 # 拉取所有路由的meta信息 存储到本地
 # EIAService.recursive_fetch_and_store_meta()
 
-# 拉取IATA sitemap中的所有网页并存储html到本地 正文到mongo
+# 拉取EC sitemap中的所有网页并存储html到本地 正文到mongo
 # ECService.fetch_and_store_sitemap_page_content()
 
 # 拉取IATA sitemap中的所有网页并存储html到本地 正文到mongo
