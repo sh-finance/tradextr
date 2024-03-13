@@ -33,3 +33,7 @@ class EIA:
     api_keys = [
         k.strip() for k in os.getenv("EIA_API_KEYS", "").split(",") if k.strip()
     ]
+
+
+class EC:
+    sitemap_url = "https://commission.europa.eu/sitemap.xml"

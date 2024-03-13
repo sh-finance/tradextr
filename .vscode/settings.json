@@ -5,6 +5,7 @@
     "pymongo",
     "sectorid",
     "tradextr",
-    "uvicorn"
+    "uvicorn",
+    "xmltodict"
   ]
 }

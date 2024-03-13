@@ -1,5 +1,3 @@
-from service.eia import EIAService
+from service.ec import ECService
 
-# EIAService.recursive_fetch_and_store_data()
-
-EIAService.recursive_fetch_and_store_meta()
+print(ECService.fetch_and_store_sitemap_page_content())
