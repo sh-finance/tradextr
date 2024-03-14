@@ -183,25 +183,32 @@ class EIAService:
         通过query请求某个路由下的数据
         """
         query = query or Query()
+        data = []
+        total = 0
         while True:
             url = EIAService.url(route=route, query=query)
             logger.info(f"url={url}")
-            body = requests.get(url).json()
-            response = body.get("response", {})
-            data, total = response.get("data", []), response.get("total", 0)
-
             try:
+                body = requests.get(url).json()
+                response = body.get("response", {})
+                data, total = response.get("data", []), response.get("total", 0)
                 handler(data, route)
             except Exception as e:
+                """
+                api有接口频率限制 请求频率太高可能会失败 碰到异常直接跳过这一部分
+                Todo: 支持查找&补全缺失部分
+                """
+                print(e)
                 logger.error(e)
-                return
-
-            # 继续获取下一页
-            offset, _length = EIAService.calc_pagination(next_page=True, query=query)
-            logger.info(f"next_page_offset: {offset}, total: {total}")
-            if offset >= int(total):
-                return
-            query.offset = offset
+            finally:
+                # 继续获取下一页
+                offset, _length = EIAService.calc_pagination(
+                    next_page=True, query=query
+                )
+                logger.info(f"next_page_offset: {offset}, total: {total}")
+                if offset >= int(total):
+                    return
+                query.offset = offset
 
     @staticmethod
     def store_data(data: list[dict[str, str]], route: str):
