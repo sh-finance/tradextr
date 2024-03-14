@@ -1,6 +1,7 @@
 from service.ec import ECService
 from service.eia import EIAService
 from service.iata import IATAService
+from service.biofuels_news import BiofuelsNewsService
 
 # 拉取所有路由下的所有数据 存储到mongo
 # EIAService.recursive_fetch_and_store_data()
@@ -14,3 +15,6 @@ from service.iata import IATAService
 
 # 拉取IATA sitemap中的所有网页并存储html到本地 正文到mongo
 # IATAService.fetch_and_store_sitemap_page_content()
+
+# 拉取BiofuelsNewsService中的所有网页并存储html到本地 正文到mongo
+# print(BiofuelsNewsService.fetch_sitemap_urls())
