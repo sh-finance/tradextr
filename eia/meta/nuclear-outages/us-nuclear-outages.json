@@ -23,7 +23,7 @@
     }
   },
   "startPeriod": "2007-01-01",
-  "endPeriod": "2024-03-11",
+  "endPeriod": "2024-05-31",
   "defaultDateFormat": "YYYY-MM-DD",
   "defaultFrequency": "daily"
 }

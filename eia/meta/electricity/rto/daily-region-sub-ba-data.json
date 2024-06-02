@@ -32,7 +32,7 @@
     }
   },
   "startPeriod": "2018-06-18",
-  "endPeriod": "2024-03-09",
+  "endPeriod": "2024-05-30",
   "defaultDateFormat": "YYYY-MM-DD",
   "defaultFrequency": "daily"
 }
