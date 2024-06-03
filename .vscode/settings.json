@@ -3,6 +3,7 @@
     "biofuels",
     "dotenv",
     "fastapi",
+    "langchain",
     "pymongo",
     "sectorid",
     "tradextr",
