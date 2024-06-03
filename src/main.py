@@ -18,4 +18,7 @@ if __name__ == "__main__":
         host=Server.host,
         port=Server.port,
         reload=Server.reload,
+        reload_includes=Server.reload_includes,
+        reload_excludes=Server.reload_excludes,
+        reload_delay=Server.reload_delay,
     )

@@ -14,7 +14,10 @@ class Server:
     app = "main:api"
     host = getenv("SERVER_HOST", "0.0.0.0")
     port = int(getenv("SERVER_PORT", 10000))
-    reload = getenv("SERVER_RELOAD") == "True"
+    reload = getenv("SERVER_RELOAD") == "true"
+    reload_includes = ["*.py", "*.json"]
+    reload_excludes = ["*.log", "*.tmp"]
+    reload_delay = 1
 
 
 class OpenAI:
