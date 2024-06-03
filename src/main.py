@@ -4,10 +4,10 @@ from fastapi import FastAPI
 api = FastAPI()
 
 
-@api.get("/")
-def test():
-    logger.info("test")
-    return "hello"
+@api.get("/health")
+def health():
+    logger.info("health checked")
+    return {"code": 0, "message": "ok"}
 
 
 if __name__ == "__main__":
@@ -18,4 +18,5 @@ if __name__ == "__main__":
         app=Server.app,
         host=Server.host,
         port=Server.port,
+        reload=Server.reload,
     )

@@ -14,6 +14,7 @@ class Server:
     app = "main:api"
     host = getenv("SERVER_HOST", "0.0.0.0")
     port = int(getenv("SERVER_PORT", 10000))
+    reload = getenv("SERVER_RELOAD") == "True"
 
 
 class OpenAI:
