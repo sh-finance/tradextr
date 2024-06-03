@@ -75,7 +75,7 @@ class Query:
             self.length = length
 
 
-class EIAService:
+class EiaAPIService:
     """
     doc: <https://www.eia.gov/opendata/documentation.php>
     """
@@ -88,8 +88,8 @@ class EIAService:
         """
         获取一个api_key, 多个api_key则负载均衡
         """
-        EIAService.__api_key_cursor += 1
-        return EIA.api_keys[EIAService.__api_key_cursor % len(EIA.api_keys)]
+        EiaAPIService.__api_key_cursor += 1
+        return EIA.api_keys[EiaAPIService.__api_key_cursor % len(EIA.api_keys)]
 
     @staticmethod
     def url(route: str, *, data: bool = True, query: Query | None = None):
@@ -99,7 +99,7 @@ class EIAService:
         """
         query = query or Query()
         urlSegments = [EIA.base_url, route.strip(os.path.sep), data and "/data" or ""]
-        queries = [f"api_key={EIAService.key()}"]
+        queries = [f"api_key={EiaAPIService.key()}"]
         if query.frequency:
             queries.append(f"frequency={query.frequency}")
         if query.facets:
@@ -166,7 +166,7 @@ class EIAService:
         """
         获取某个路由的meta信息
         """
-        url = EIAService.url(route=route, data=False)
+        url = EiaAPIService.url(route=route, data=False)
         response = requests.get(url)
         body = response.json()
         response = body.get("response", {})
@@ -186,7 +186,7 @@ class EIAService:
         data = []
         total = 0
         while True:
-            url = EIAService.url(route=route, query=query)
+            url = EiaAPIService.url(route=route, query=query)
             logger.info(f"url={url}")
             try:
                 body = requests.get(url).json()
@@ -202,7 +202,7 @@ class EIAService:
                 logger.error(e)
             finally:
                 # 继续获取下一页
-                offset, _length = EIAService.calc_pagination(
+                offset, _length = EiaAPIService.calc_pagination(
                     next_page=True, query=query
                 )
                 logger.info(f"next_page_offset: {offset}, total: {total}")
@@ -218,11 +218,13 @@ class EIAService:
 
     @staticmethod
     def fetch_and_store_data(route: str, *, query: Query | None = None):
-        EIAService.fetch_data(route=route, query=query, handler=EIAService.store_data)
+        EiaAPIService.fetch_data(
+            route=route, query=query, handler=EiaAPIService.store_data
+        )
 
     @staticmethod
     def recursive_fetch_and_store_data(route: str = ""):
-        meta = EIAService.fetch_meta(route)
+        meta = EiaAPIService.fetch_meta(route)
         logger.info(route)
         routes = meta.get("routes", [])
         if routes:
@@ -231,7 +233,7 @@ class EIAService:
                 if not sub_route_id:
                     logger.warning(f"sub_route_id is empty: {sub_route_id}")
                     continue
-                EIAService.recursive_fetch_and_store_data(
+                EiaAPIService.recursive_fetch_and_store_data(
                     os.path.sep.join([route, sub_route_id])
                 )
         else:
@@ -240,11 +242,11 @@ class EIAService:
             for frequency in meta.get("frequency", []):
                 frequency_id = frequency.get("id", "")
                 query = Query(frequency=frequency_id, data=data_keys)
-                EIAService.fetch_and_store_data(route=route, query=query)
+                EiaAPIService.fetch_and_store_data(route=route, query=query)
 
     @staticmethod
     def recursive_fetch_and_store_meta(route: str = ""):
-        meta = EIAService.fetch_meta(route)
+        meta = EiaAPIService.fetch_meta(route)
         logger.info(route)
         # meta写入到本地
         sub_path = route.strip(os.path.sep) or "index"
@@ -253,9 +255,6 @@ class EIAService:
         dir_path = os.path.abspath(
             os.path.join(
                 os.path.abspath(os.path.dirname(__file__)),
-                "..",
-                "..",
-                "eia",
                 "meta",
                 *sub_dir,
             )
@@ -273,6 +272,6 @@ class EIAService:
                 if not sub_route_id:
                     logger.warning(f"sub_route_id is empty: {sub_route_id}")
                     continue
-                EIAService.recursive_fetch_and_store_meta(
+                EiaAPIService.recursive_fetch_and_store_meta(
                     os.path.sep.join([route, sub_route_id])
                 )
