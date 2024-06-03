@@ -1,0 +1,13 @@
+**/.DS_Store
+**/.git
+**/.idea
+**/.vscode
+**/__pycache__
+**/.pytest_cache
+**/.coverage
+**/.mypy_cache
+**/venv
+**/requirements.txt.lock
+# **/.env
+**/.venv
+**/.python-version

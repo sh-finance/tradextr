@@ -19,7 +19,7 @@
 
 ```shell
 # 启动
-docker compose up
+docker compose up --build
 # 停止
 # Ctrl + C
 ```
@@ -30,7 +30,7 @@ docker compose up
 
 ```shell
 # 启动
-docker compose up -d
+docker compose up --build -d
 
 # 停止
 docker compose down

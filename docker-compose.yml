@@ -1,15 +1,11 @@
 services:
   api:
+    build: .
     container_name: tradextr
-    image: python:3.12.3-bookworm
-    environment:
-      - PATH=/usr/src/app/.venv/bin:$PATH
     ports:
       - "10000:10000"
     volumes:
-      - .:/usr/src/app
-    working_dir: /usr/src/app
-    command: python src/main.py
+      - .:/app
     restart: unless-stopped
     healthcheck:
       test: curl -f http://localhost:10000/health || exit 1
