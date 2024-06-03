@@ -8,6 +8,8 @@ from service.openai import llm
 from service.redis import redis
 from service.es import es, es_vector_store
 
+from util.reformulate_as_separate_question import reformulate_as_separate_question
+
 # 拉取所有路由下的所有数据 存储到mongo
 # EIAService.recursive_fetch_and_store_data()
 # 拉取total-energy下的所有数据 存储到mongo
