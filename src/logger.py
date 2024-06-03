@@ -1,8 +1,10 @@
 from logging import getLogger, FileHandler, Formatter, DEBUG
 
+from config import Logger
+
 logger = getLogger()
 
-logger.setLevel(DEBUG)
+logger.setLevel(Logger.level)
 
 handler = FileHandler(f".app.log")
 

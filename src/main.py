@@ -11,14 +11,16 @@ def health():
 
 if __name__ == "__main__":
     import uvicorn
-    from config import Server
+    import config
+
+    logger.debug(config)
 
     uvicorn.run(
-        app=Server.app,
-        host=Server.host,
-        port=Server.port,
-        reload=Server.reload,
-        reload_includes=Server.reload_includes,
-        reload_excludes=Server.reload_excludes,
-        reload_delay=Server.reload_delay,
+        app=config.Server.app,
+        host=config.Server.host,
+        port=config.Server.port,
+        reload=config.Server.reload,
+        reload_includes=config.Server.reload_includes,
+        reload_excludes=config.Server.reload_excludes,
+        reload_delay=config.Server.reload_delay,
     )

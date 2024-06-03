@@ -1,14 +1,15 @@
 from os import path, getenv, environ
 from urllib.parse import quote_plus
-
-from logger import logger
 from dotenv import load_dotenv
+from logging import getLevelName
+
 
 BASEDIR = path.abspath(path.dirname(__file__))
 load_dotenv(path.join(BASEDIR, "..", ".env"), override=True)
 
-if getenv("ENV_LOG") == "true":
-    logger.info(environ)
+
+class Logger:
+    level = getLevelName(getenv("LOGGER_LEVEL", "INFO"))
 
 
 class Server:

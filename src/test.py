@@ -6,6 +6,7 @@ from service.iata import IATAService
 from service.biofuels_news import BiofuelsNewsService
 
 from service.redis import redis
+from service.es import es
 
 # 拉取所有路由下的所有数据 存储到mongo
 # EIAService.recursive_fetch_and_store_data()
@@ -22,3 +23,7 @@ from service.redis import redis
 
 # 拉取BiofuelsNewsService中的所有网页并存储html到本地 正文到mongo
 # print(BiofuelsNewsService.fetch_sitemap_urls())
+
+# logger.info(redis.info())
+
+# logger.info(es.info())
