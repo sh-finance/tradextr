@@ -1,7 +1,11 @@
+from logger import logger
+
 from service.ec import ECService
 from service.eia import EIAService
 from service.iata import IATAService
 from service.biofuels_news import BiofuelsNewsService
+
+from service.redis import redis
 
 # 拉取所有路由下的所有数据 存储到mongo
 # EIAService.recursive_fetch_and_store_data()

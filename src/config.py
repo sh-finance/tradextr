@@ -1,4 +1,5 @@
 from os import path, getenv, environ
+from urllib.parse import quote_plus
 
 from logger import logger
 from dotenv import load_dotenv
@@ -32,6 +33,17 @@ class Mongo:
     port = int(getenv("MONGO_PORT", 27017))
     username = getenv("MONGO_USERNAME", "")
     password = getenv("MONGO_PASSWORD", "")
+
+
+class Redis:
+    host = getenv("REDIS_HOST", "localhost")
+    port = int(getenv("REDIS_PORT", 6379))
+    username = getenv("REDIS_USERNAME", "")
+    password = getenv("REDIS_PASSWORD", "")
+    url = (
+        getenv("REDIS_URL", "")
+        or f"redis://{quote_plus(username)}:{quote_plus(password)}@{host}:{port}"
+    )
 
 
 class EIA:

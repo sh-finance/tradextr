@@ -4,6 +4,8 @@
     "dotenv",
     "fastapi",
     "langchain",
+    "levelname",
+    "msecs",
     "pymongo",
     "sectorid",
     "tradextr",
