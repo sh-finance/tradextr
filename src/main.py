@@ -6,7 +6,6 @@ api = FastAPI()
 
 @api.get("/health")
 def health():
-    logger.info("health checked")
     return {"code": 0, "message": "ok"}
 
 
