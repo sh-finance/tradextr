@@ -1,6 +1,7 @@
 name: Tradextr
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
