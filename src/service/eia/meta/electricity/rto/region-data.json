@@ -36,7 +36,7 @@
     }
   },
   "startPeriod": "2015-07-01T05",
-  "endPeriod": "2024-06-02T07",
+  "endPeriod": "2024-06-03T07",
   "defaultDateFormat": "YYYY-MM-DD\"T\"HH24",
   "defaultFrequency": "hourly"
 }
