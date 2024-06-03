@@ -18,5 +18,4 @@ if __name__ == "__main__":
         app=Server.app,
         host=Server.host,
         port=Server.port,
-        reload=Server.reload,
     )

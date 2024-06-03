@@ -1,28 +1,33 @@
-import os
+from os import path, getenv, environ
 
 from logger import logger
 from dotenv import load_dotenv
 
-BASEDIR = os.path.abspath(os.path.dirname(__file__))
-load_dotenv(os.path.join(BASEDIR, "..", ".env"), override=True)
+BASEDIR = path.abspath(path.dirname(__file__))
+load_dotenv(path.join(BASEDIR, "..", ".env"), override=True)
 
-OUTPUT_ENV = os.getenv("OUTPUT_ENV", "True") == "True"
-if OUTPUT_ENV:
-    logger.info(os.environ)
+if getenv("ENV_LOG") == "true":
+    logger.info(environ)
 
 
 class Server:
     app = "main:api"
-    host = os.getenv("HOST", "0.0.0.0")
-    port = int(os.getenv("PORT", 10000))
-    reload = os.getenv("RELOAD", "False") == "True"
+    host = getenv("SERVER_HOST", "0.0.0.0")
+    port = int(getenv("SERVER_PORT", 10000))
+
+
+class OpenAI:
+    base_url = getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
+    api_key = getenv("OPENAI_API_KEY", "sk-xxx")
+    model = getenv("OPENAI_MODEL", "gpt-3.5-turbo-0125")
+    embedding_model = getenv("OPENAI_EMBEDDING_MODEL", "text-embedding-3-small")
 
 
 class Mongo:
-    host = os.getenv("MONGO_HOST", "localhost")
-    port = int(os.getenv("MONGO_PORT", 27017))
-    username = os.getenv("MONGO_USERNAME", "")
-    password = os.getenv("MONGO_PASSWORD", "")
+    host = getenv("MONGO_HOST", "localhost")
+    port = int(getenv("MONGO_PORT", 27017))
+    username = getenv("MONGO_USERNAME", "")
+    password = getenv("MONGO_PASSWORD", "")
 
 
 class EIA:
@@ -30,9 +35,7 @@ class EIA:
     host = "api.eia.gov"
     api_version = "v2"
     base_url = f"{protocol}://{host}/{api_version}/"
-    api_keys = [
-        k.strip() for k in os.getenv("EIA_API_KEYS", "").split(",") if k.strip()
-    ]
+    api_keys = [k.strip() for k in getenv("EIA_API_KEYS", "").split(",") if k.strip()]
 
 
 class EC:
