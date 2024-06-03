@@ -36,3 +36,16 @@ from util.reformulate_as_separate_question import reformulate_as_separate_questi
 # logger.info(es.info())
 
 # logger.info(mongo.server_info())
+
+question = "where EIA's open source code available on?"
+
+res = es_vector_store.similarity_search(question)
+# logger.info(res)
+
+res = llm.invoke(
+    f"""base on the context, answer the question: {question}
+           <context>{res[0].page_content}</context>
+           """
+)
+
+logger.info(res)
