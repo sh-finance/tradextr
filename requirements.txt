@@ -11,3 +11,5 @@ beautifulsoup4==4.12.3
 langchain==0.2.1
 langchain-openai==0.1.8
 redis==5.0.4
+elasticsearch==8.13.2
+langchain-elasticsearch==0.2.2

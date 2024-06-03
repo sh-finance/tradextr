@@ -46,6 +46,10 @@ class Redis:
     )
 
 
+class Elasticsearch:
+    url = getenv("ES_URL", "http://localhost:9200")
+
+
 class EIA:
     protocol = "https"
     host = "api.eia.gov"
