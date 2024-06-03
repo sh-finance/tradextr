@@ -1,15 +1,15 @@
-from config import Elasticsearch as ElasticsearchConfig
+import config
 
 from elasticsearch import Elasticsearch
 from langchain_elasticsearch import ElasticsearchStore
 
 from service.openai import embedding
 
-es = Elasticsearch(ElasticsearchConfig.url)
+es = Elasticsearch(config.Elasticsearch.url)
 
 es_vector_store = ElasticsearchStore(
     embedding=embedding,
-    index_name="test",
+    index_name=config.Server.name,
     es_connection=es,
 )
 

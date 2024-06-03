@@ -1,4 +1,4 @@
-from os import path, getenv, environ
+from os import path, getenv
 from urllib.parse import quote_plus
 from dotenv import load_dotenv
 from logging import getLevelName
@@ -13,6 +13,7 @@ class Logger:
 
 
 class Server:
+    name = "tradextr"
     app = "main:api"
     host = getenv("SERVER_HOST", "0.0.0.0")
     port = int(getenv("SERVER_PORT", 10000))

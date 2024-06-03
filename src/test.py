@@ -4,9 +4,9 @@ from service.ec import ECService
 from service.eia import EIAService
 from service.iata import IATAService
 from service.biofuels_news import BiofuelsNewsService
-
+from service.openai import llm
 from service.redis import redis
-from service.es import es
+from service.es import es, es_vector_store
 
 # 拉取所有路由下的所有数据 存储到mongo
 # EIAService.recursive_fetch_and_store_data()
