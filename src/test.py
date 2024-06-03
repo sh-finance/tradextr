@@ -2,6 +2,7 @@ from logger import logger
 
 from service.ec import ECService
 from service.eia.api import EiaAPIService
+from service.eia.page import EiaPageService
 from service.iata import IATAService
 from service.biofuels_news import BiofuelsNewsService
 from service.openai import llm
@@ -17,6 +18,9 @@ from util.reformulate_as_separate_question import reformulate_as_separate_questi
 # EiaAPIService.recursive_fetch_and_store_data("total-energy")
 # 拉取所有路由的meta信息 存储到本地
 # EiaAPIService.recursive_fetch_and_store_meta()
+# 拉取EIA所有网页 向量化并入库es
+# EiaPageService.start_crawl()
+
 
 # 拉取EC sitemap中的所有网页并存储html到本地 正文到mongo
 # ECService.fetch_and_store_sitemap_page_content()
