@@ -4,8 +4,6 @@ services:
     container_name: tradextr
     ports:
       - "10000:10000"
-    volumes:
-      - .:/app
     restart: unless-stopped
     healthcheck:
       test: curl -f http://localhost:10000/health || exit 1
