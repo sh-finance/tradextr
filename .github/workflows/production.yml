@@ -1,0 +1,23 @@
+name: Tradextr
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup private key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.PID_RSA }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: Deploy
+        run: |
+          ssh -o StrictHostKeyChecking=no typist@aidd.typist.cc 'cd /home/typist/tradextr; ./script/deploy.sh'
