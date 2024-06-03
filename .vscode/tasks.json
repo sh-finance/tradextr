@@ -4,7 +4,17 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "test",
+      "label": "Init",
+      "type": "shell",
+      "command": "./script/init.sh",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Test",
       "type": "shell",
       "command": "./script/test.sh",
       "problemMatcher": [],
