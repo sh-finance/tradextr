@@ -7,6 +7,7 @@ from service.biofuels_news import BiofuelsNewsService
 from service.openai import llm
 from service.redis import redis
 from service.es import es, es_vector_store
+from service.mongo import mongo
 
 from util.reformulate_as_separate_question import reformulate_as_separate_question
 
@@ -29,3 +30,5 @@ from util.reformulate_as_separate_question import reformulate_as_separate_questi
 # logger.info(redis.info())
 
 # logger.info(es.info())
+
+# logger.info(mongo.server_info())
