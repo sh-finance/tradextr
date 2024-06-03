@@ -1,13 +1,20 @@
-import logging
+from logging import getLogger, FileHandler, Formatter, DEBUG
 
-logger = logging.getLogger()
+logger = getLogger()
 
-logger.setLevel(logging.DEBUG)
+logger.setLevel(DEBUG)
 
-handler = logging.FileHandler("app.log")
+handler = FileHandler(f".app.log")
 
-# formatter = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
+timestamp_format = "%Y-%m-%d %H:%M:%S"
 
-# handler.setFormatter(formatter)
+formatter = Formatter(
+    "%(asctime)s.%(msecs)03d  %(name)s - %(levelname)s - %(message)s",
+    datefmt=timestamp_format,
+)
+
+handler.setFormatter(formatter)
 
 logger.addHandler(handler)
+
+logger.debug("logger initialized")
