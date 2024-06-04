@@ -1,4 +1,4 @@
-from os import path, getenv
+from os import environ, path, getenv
 from urllib.parse import quote_plus
 from dotenv import load_dotenv
 from logging import getLevelName
@@ -29,6 +29,28 @@ class OpenAI:
     api_key = getenv("OPENAI_API_KEY", "sk-xxx")
     model = getenv("OPENAI_MODEL", "gpt-3.5-turbo-0125")
     embedding_model = getenv("OPENAI_EMBEDDING_MODEL", "text-embedding-3-small")
+
+
+class Tavily:
+    __api_key_cursor = 0
+
+    api_keys = [
+        key.strip()
+        for key in getenv("TAVILY_API_KEYS", "").split(sep=",")
+        if len(key) > 0
+    ]
+    max_results = int(getenv("TAVILY_MAX_RESULTS", 5))
+
+    @staticmethod
+    def api_key():
+        key = Tavily.api_keys[Tavily.__api_key_cursor % len(Tavily.api_keys)]
+        Tavily.__api_key_cursor += 1
+        return key
+
+
+# LangChain中使用Tavily只能通过环境变量的方式注入key
+# 默认使用第一个key
+environ["TAVILY_API_KEY"] = Tavily.api_keys[0]
 
 
 class Mongo:

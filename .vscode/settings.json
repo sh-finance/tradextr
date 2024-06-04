@@ -11,6 +11,7 @@
     "tradextr",
     "uvicorn",
     "xmltodict",
-    "pydantic"
+    "pydantic",
+    "tavily"
   ]
 }
