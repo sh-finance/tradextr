@@ -19,16 +19,18 @@ prompt = PromptTemplate.from_template(prompt_template)
 chain = prompt | llm | StrOutputParser()
 
 
-def rag(question: str, contexts: list[Context]):
-    keywords = keywords_extractor.invoke({"text": question})
+def rag(messages: str, contexts: list[Context]):
+    # keywords = keywords_extractor.invoke({"text": question})
+    # logger.info("keywords: %s", keywords)
 
-    logger.info("keywords: %s", keywords)
+    for i, ctx in enumerate(contexts):
+        ctx.index = i + 1
 
     context_str = "\n".join([ctx.__xml__() for ctx in contexts])
 
     answer = chain.invoke(
         {
-            "question": question,
+            "messages": messages,
             "context": context_str,
             "current_date": date.today().isoformat(),
         }

@@ -4,6 +4,7 @@ import config
 from tavily import TavilyClient
 from langchain_community.tools.tavily_search import TavilySearchResults, TavilyAnswer
 from openai.types.chat import ChatCompletionMessageParam
+from dto.entity.context import Context
 from util.reformulate_as_separate_question import reformulate_as_separate_question
 
 tavily_client = TavilyClient(config.Tavily.api_key())
@@ -38,11 +39,7 @@ def search(query: str, domains: list[str] = []):
     )
     results = response and response.get("results", []) or []
     return [
-        {
-            "title": res.get("title"),
-            "content": res.get("content"),
-            "url": res.get("url"),
-        }
+        Context(title=res.get("title"), content=res.get("content"), link=res.get("url"))
         for res in results
         if res.get("content")
     ]
