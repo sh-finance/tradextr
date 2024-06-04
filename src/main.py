@@ -1,4 +1,5 @@
 import json
+from dto.entity.context import generate_markdown_references, sort_contexts
 from dto.entity.response import ParrotResponse
 from logger import logger
 from fastapi import FastAPI, Request
@@ -17,7 +18,7 @@ def health():
     return {"code": 0, "message": "ok"}
 
 
-@api.post("/rag")
+@api.post("/biodiesel-trader/rag")
 async def rag_handler(request: Request):
     try:
         dto = await request.json()
@@ -51,10 +52,14 @@ async def rag_handler(request: Request):
     if len(contexts) == 0:
         contexts = tavily_search(query_with_context)
 
+    contexts = sort_contexts(contexts)
+
     answer = rag(json.dumps(messages), contexts)
 
+    ref = generate_markdown_references(contexts)
+
     return ParrotResponse(
-        answer,
+        answer + "\n\n" + ref,
         metadata={
             "query_with_context": query_with_context,
             "contexts": [ctx.__str__() for ctx in contexts],

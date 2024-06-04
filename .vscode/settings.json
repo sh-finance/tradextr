@@ -12,6 +12,7 @@
     "uvicorn",
     "xmltodict",
     "pydantic",
-    "tavily"
+    "tavily",
+    "biodiesel"
   ]
 }

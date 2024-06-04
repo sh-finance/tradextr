@@ -37,3 +37,13 @@ class Context:
 
     def __ref__(self):
         return f"[\\[{self.index}\\]]: {self.link}"
+
+
+def sort_contexts(contexts: list[Context]):
+    for i, ctx in enumerate(contexts):
+        ctx.index = i + 1
+    return contexts
+
+
+def generate_markdown_references(contexts: list[Context]):
+    return "\n".join([context.__ref__() for context in contexts])

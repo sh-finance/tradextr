@@ -20,12 +20,6 @@ chain = prompt | llm | StrOutputParser()
 
 
 def rag(messages: str, contexts: list[Context]):
-    # keywords = keywords_extractor.invoke({"text": question})
-    # logger.info("keywords: %s", keywords)
-
-    for i, ctx in enumerate(contexts):
-        ctx.index = i + 1
-
     context_str = "\n".join([ctx.__xml__() for ctx in contexts])
 
     answer = chain.invoke(
