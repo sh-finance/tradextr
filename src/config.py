@@ -13,8 +13,6 @@ class Logger:
 
 
 class Server:
-    # name = "tradextr"
-    name = "bio_database_new"
     app = "main:api"
     host = getenv("SERVER_HOST", "0.0.0.0")
     port = int(getenv("SERVER_PORT", 10000))
@@ -72,6 +70,7 @@ class Redis:
 
 
 class Elasticsearch:
+    index_name = getenv("ES_INDEX_NAME", "unknown")
     url = getenv("ES_URL", "http://localhost:9200")
 
 
