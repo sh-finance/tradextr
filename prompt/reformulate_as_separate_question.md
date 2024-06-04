@@ -1,1 +1,5 @@
-Given a chat history and the latest user question which might reference context in the chat history, formulate a standalone question which can be understood without the chat history. Do NOT answer the question, just reformulate it if needed and otherwise return it as is.
+The message html tag contains a historical chat record of a session. The last sentence is the user's question. Please convert the user's question so that the converted sentence can express the same amount of information as the original sentence without the need for historical records. Try to retain all information. No referential words such as "it", "this", "that" should appear in the middle of the converted sentence.
+
+<messages>
+{messages}
+</messages>
