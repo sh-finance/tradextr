@@ -18,15 +18,15 @@ class PageMetadata:
 
 
 class EIAPageService:
-    cached_urls: set[str]
+    cached_url_set: set[str]
 
     # 判断一个url是否已经被缓存
     def is_cached(self, url: str):
-        return url in self.cached_urls
+        return url in self.cached_url_set
 
     # 获取所有metadata.url
     @staticmethod
-    def get_cached_urls():
+    def get_cached_url_set():
         query = {
             "_source": ["metadata.url"],
             "query": {"bool": {"must": [{"exists": {"field": "metadata.url"}}]}},
@@ -39,17 +39,17 @@ class EIAPageService:
         query = {"query": {"term": {"metadata.url": url}}}
         es.delete_by_query(index=config.Elasticsearch.index_name, body=query)
 
-    def reload_cached_urls(self):
-        urls = EIAPageService.get_cached_urls()
+    def reload_cached_url_set(self):
+        urls = EIAPageService.get_cached_url_set()
         for url in urls.copy():
             # 动态网页不计入初始已缓存网页, 但后续访问中会计入
             for pattern in config.EIA.dynamic_url_patterns:
                 if search(pattern, url):
                     urls.remove(url)
-        self.cached_urls = urls
+        self.cached_url_set = urls
 
     def __init__(self):
-        self.reload_cached_urls()
+        self.reload_cached_url_set()
 
     # 判断url是否为子域
     def is_subdomain(self, domain: str, url: str):
@@ -101,7 +101,8 @@ class EIAPageService:
             for sub_url in sub_urls
             if self.is_subdomain(config.EIA.root_domain, sub_url)
         ]
-        return set(sub_urls)
+        sub_url_set = set(sub_urls)
+        return sub_url_set - self.cached_url_set
 
     def store_page(self, url: str, metadata: PageMetadata):
         doc = Document(
@@ -114,7 +115,7 @@ class EIAPageService:
         )
         # 删除旧文档
         self.delete_url(url)
-        self.cached_urls.add(url)
+        self.cached_url_set.add(url)
         return es_vector_store.add_documents([doc])
 
     # 验证url是否可爬取
