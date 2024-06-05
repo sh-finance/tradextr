@@ -93,7 +93,7 @@ class EIA:
     # 按照顺序从左到右依次尝试查找selector 将找到的元素内容作为页面内容
     page_date_selector_priority = [".date"]
     # 爬取的网页最大深度, 首页深度视为0
-    page_depth = 10
+    page_depth = 128
 
 
 class EC:
