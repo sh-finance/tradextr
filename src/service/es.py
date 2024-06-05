@@ -29,3 +29,7 @@ def search(query: str) -> list[Context]:
         )
         for doc in docs
     ]
+
+
+if not es.indices.exists(index=config.Elasticsearch.index_name):
+    es.indices.create(index=config.Elasticsearch.index_name)

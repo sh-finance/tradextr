@@ -30,10 +30,10 @@ class EIAPageService:
         return set(urls)
 
     def delete_url(self, url: str):
-        query = {"query": {"term": {"url": url}}}
+        query = {"query": {"term": {"metadata.url": url}}}
         es.delete_by_query(index=config.Elasticsearch.index_name, body=query)
 
-    def __init__(self):
+    def reload_cached_urls(self):
         urls = EIAPageService.get_cached_urls()
         for url in urls.copy():
             # 动态网页不计入初始已缓存网页, 但后续访问中会计入
@@ -41,6 +41,9 @@ class EIAPageService:
                 if search(pattern, url):
                     urls.remove(url)
         self.cached_urls = urls
+
+    def __init__(self):
+        self.reload_cached_urls()
 
     # 判断url是否为子域
     def is_subdomain(self, domain: str, url: str):
@@ -94,6 +97,29 @@ class EIAPageService:
         self.cached_urls.add(url)
         return es_vector_store.add_documents([doc])
 
+    # 验证url是否可爬取
+    def valid_url(self, url: str):
+        invalid_strs = [
+            "#",
+            ".png",
+            ".csv",
+            ".doc",
+            ".docx",
+            ".ppt",
+            ".xlsx",
+            ".xls",
+            ".pdf",
+            ".pptx",
+            ".xml",
+            ".jpg",
+            ".webp",
+            ".gif",
+        ]
+        for s in invalid_strs:
+            if s in url:
+                return False
+        return True
+
     def recursive_fetch_and_store_page(
         self, url: str = config.EIA.page_base_url, depth=0
     ):
@@ -102,7 +128,10 @@ class EIAPageService:
             logger.debug(f"depth > {config.EIA.page_depth}, skipped")
             return
         if self.is_cached(url):
-            logger.error(f"url cached, skipped")
+            logger.info(f"url cached, skipped")
+            return
+        if not self.valid_url(url):
+            logger.info(f"url invalid, skipped")
             return
         html = self.fetch_page_html(url)
         if not html:

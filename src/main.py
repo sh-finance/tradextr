@@ -7,7 +7,6 @@ from fastapi import FastAPI, Request
 from util.reformulate_as_separate_question import reformulate_as_separate_question
 from util.rag import rag
 
-from service.es import search as es_search
 from service.tavily import search as tavily_search
 
 api = FastAPI()
@@ -70,6 +69,10 @@ async def rag_handler(request: Request):
 if __name__ == "__main__":
     import uvicorn
     import config
+
+    from schedule import scheduler_run
+
+    scheduler_run()
 
     logger.debug(config)
 
