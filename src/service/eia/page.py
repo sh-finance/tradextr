@@ -11,6 +11,12 @@ from service.es import es, es_vector_store
 from service.spider import SpiderService
 
 
+class PageMetadata:
+    html: str
+    content: str
+    title: str
+
+
 class EIAPageService:
     cached_urls: set[str]
 
@@ -63,15 +69,28 @@ class EIAPageService:
             logger.error(e)
             return ""
 
-    def extract_page_content(self, html: str):
+    def extract_page_metadata(self, html: str) -> PageMetadata:
+        metadata = PageMetadata()
+
         soup = BeautifulSoup(html, "html.parser")
+
+        metadata.html = html
+
+        metadata.title = ""
+        title_tag = soup.select_one("title")
+        if title_tag:
+            metadata.title = title_tag.get_text(separator="\n", strip=True)
+
+        metadata.content = soup.get_text(separator="\n", strip=True)
         for selector in config.EIA.page_content_selector_priority:
             ele = soup.select_one(selector)
             if ele:
                 content = ele.get_text(separator="\n", strip=True)
                 if content:
-                    return content
-        return soup.get_text(separator="\n", strip=True)
+                    metadata.content = content
+                    break
+
+        return metadata
 
     def extract_sub_url_set(self, html: str, base_url: str):
         soup = BeautifulSoup(html, "html.parser")
@@ -84,12 +103,13 @@ class EIAPageService:
         ]
         return set(sub_urls)
 
-    def store_page_content(self, url: str, html: str, content: str):
+    def store_page(self, url: str, metadata: PageMetadata):
         doc = Document(
-            page_content=content,
+            page_content=metadata.content,
             metadata={
                 "url": url,
-                "html": html,
+                "html": metadata.html,
+                "title": metadata.title,
             },
         )
         # 删除旧文档
@@ -137,11 +157,11 @@ class EIAPageService:
         if not html:
             logger.error(f"failed to fetch html, skipped")
             return
-        content = self.extract_page_content(html)
-        if not content:
+        metadata = self.extract_page_metadata(html)
+        if not metadata.content:
             logger.error(f"failed to extract content, skipped")
             return
-        ids = self.store_page_content(url=url, html=html, content=content)
+        ids = self.store_page(url=url, metadata=metadata)
         if len(ids) == 0:
             logger.error(f"failed to store into es")
             return
