@@ -10,6 +10,8 @@ from langchain_elasticsearch import ElasticsearchStore
 from langchain_core.documents.base import Document
 from datetime import datetime, timezone, timedelta
 
+import config
+
 # use log to find errors while running
 from logger import logger
 
@@ -27,10 +29,24 @@ headers = {
 
 
 # test if the url scraped from eia already stored or not
-def document_exists(url, es=es):
-    query = {"query": {"term": {"metadata.url.keyword": url}}}
+def document_exists(url):
+    query = {"query": {"term": {"metadata.url": url}}}
     response = es.search(body=query)
     return response["hits"]["total"]["value"] > 0
+
+
+# 获取所有metadata.url
+def get_cached_url():
+    query = {
+        "_source": ["metadata.url"],
+        "query": {"bool": {"must": [{"exists": {"field": "metadata.url"}}]}},
+    }
+    response = es.search(body=query)
+    return [doc["_source"]["metadata"]["url"] for doc in response["hits"]["hits"]]
+
+
+# 已访问过的网页
+visited = set(get_cached_url())
 
 
 # 建立函数方便爬取不同网页
@@ -156,7 +172,6 @@ def get_links(url, domain):
 def crawl(start_url):
     domain = "{uri.scheme}://{uri.netloc}".format(uri=requests.utils.urlparse(start_url))  # type: ignore
     queue = deque([start_url])
-    visited = set()
 
     while queue:
         url = queue.popleft()
@@ -204,4 +219,4 @@ start_url = domain
 class EiaPageService:
     @staticmethod
     def start_crawl():
-        crawl(start_url)
+        crawl(config.EIA.page_base_url)

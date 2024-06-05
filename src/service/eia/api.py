@@ -98,7 +98,11 @@ class EiaAPIService:
         route: 具体路由, 通过请求不带/data的url获取 `https://api.eia.gov/v2`
         """
         query = query or Query()
-        urlSegments = [EIA.base_url, route.strip(os.path.sep), data and "/data" or ""]
+        urlSegments = [
+            EIA.api_base_url,
+            route.strip(os.path.sep),
+            data and "/data" or "",
+        ]
         queries = [f"api_key={EiaAPIService.key()}"]
         if query.frequency:
             queries.append(f"frequency={query.frequency}")

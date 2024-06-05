@@ -4,7 +4,8 @@ from langchain_core.output_parsers import StrOutputParser
 
 from service.ec import ECService
 from service.eia.api import EiaAPIService
-from service.eia.page import EiaPageService
+
+# from service.eia._page import EiaPageService
 from service.iata import IATAService
 from service.biofuels_news import BiofuelsNewsService
 from service.openai import llm
