@@ -1,5 +1,8 @@
 import config
 
+from typing import List
+from langchain_core.documents import Document
+
 from elasticsearch import Elasticsearch
 from langchain_elasticsearch import ElasticsearchStore
 
@@ -14,14 +17,6 @@ es_vector_store = ElasticsearchStore(
     index_name=config.Elasticsearch.index_name,
     es_connection=es,
 )
-
-# from langchain_core.documents import Document
-# es_vector_store.add_documents(
-#   documents=[
-#     Document(page_content="123123123", metadata = { "url": "https://example.com", "html": "<html></html>" }),
-#     Document(page_content="456456456", metadata = { "url": "https://example.com", "html": "<html></html>" }),
-#   ]
-# )
 
 
 def search(query: str) -> list[Context]:

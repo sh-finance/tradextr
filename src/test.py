@@ -4,6 +4,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 from service.ec import ECService
 from service.eia.api import EiaAPIService
+from service.eia.page import eia_page_service
 
 # from service.eia._page import EiaPageService
 from service.iata import IATAService
@@ -18,6 +19,8 @@ from util.reformulate_as_separate_question import reformulate_as_separate_questi
 from util.extractor import keywords_extractor
 
 chain = llm | StrOutputParser()
+
+eia_page_service.recursive_fetch_and_store_page()
 
 # 拉取所有路由下的所有数据 存储到mongo
 # EiaAPIService.recursive_fetch_and_store_data()

@@ -1,5 +1,6 @@
 from os import environ, path, getenv
 from urllib.parse import quote_plus
+from re import compile
 from dotenv import load_dotenv
 from logging import getLevelName
 
@@ -75,17 +76,22 @@ class Elasticsearch:
 
 
 class EIA:
+    root_domain = "eia.gov"
     protocol = "https"
     host = "api.eia.gov"
     api_version = "v2"
     api_base_url = f"{protocol}://{host}/{api_version}/"
     api_keys = [k.strip() for k in getenv("EIA_API_KEYS", "").split(",") if k.strip()]
-    page_base_url = f"{protocol}://{host}/"
-    page = {
-        # 最大搜索深度
-        # 首页深度为0
-        "max_depth": 2
-    }
+    page_base_url = "https://www.eia.gov/"
+    # 匹配规则的地址每次抓取都需要更新
+    dynamic_url_patterns = [
+        # 所有以`/`结尾的地址
+        compile(r"/$")
+    ]
+    # 按照顺序从左到右依次尝试查找selector 将找到的元素内容作为页面内容
+    page_content_selector_priority = [".article", ".pagecontent", "body"]
+    # 爬取的网页最大深度, 首页深度视为0
+    page_depth = 2
 
 
 class EC:
