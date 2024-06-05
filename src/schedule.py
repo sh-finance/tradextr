@@ -15,7 +15,7 @@ def eia_page():
     except Exception as e:
         logger.error(e)
     finally:
-        eia_page_service.reload_cached_urls()
+        eia_page_service.reload_cached_url_set()
         scheduler.enter(60 * 60, 1, eia_page)
 
 
