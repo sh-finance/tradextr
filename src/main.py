@@ -8,6 +8,7 @@ from util.reformulate_as_separate_question import reformulate_as_separate_questi
 from util.rag import rag
 
 from service.tavily import search as tavily_search
+from service.es import search as es_search
 
 api = FastAPI()
 
@@ -46,10 +47,11 @@ async def rag_handler(request: Request):
 
     contexts = []
 
-    # contexts = es_search(query_with_context)
+    contexts = es_search(query_with_context)
 
-    if len(contexts) == 0:
-        contexts = tavily_search(query_with_context)
+    if len(contexts) < config.Tavily.max_results:
+        tavily_results = tavily_search(query_with_context)
+        contexts.extend(tavily_results[0 : config.Tavily.max_results - len(contexts)])
 
     contexts = sort_contexts(contexts)
 
