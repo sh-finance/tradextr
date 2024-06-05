@@ -18,6 +18,27 @@ es_vector_store = ElasticsearchStore(
     es_connection=es,
 )
 
+mappings = {
+    "mappings": {
+        "properties": {
+            "text": {"type": "text"},
+            "vector": {"type": "float"},
+            "metadata": {
+                "type": "nested",
+                "properties": {
+                    "url": {"type": "keyword"},
+                    "html": {"type": "text"},
+                    "title": {"type": "text"},
+                    "date": {"type": "date"},
+                },
+            },
+        }
+    }
+}
+
+if not es.indices.exists(index=config.Elasticsearch.index_name):
+    es.indices.create(index=config.Elasticsearch.index_name, body=mappings)
+
 
 def search(query: str) -> list[Context]:
     docs = es_vector_store.similarity_search(query)
@@ -29,7 +50,3 @@ def search(query: str) -> list[Context]:
         )
         for doc in docs
     ]
-
-
-if not es.indices.exists(index=config.Elasticsearch.index_name):
-    es.indices.create(index=config.Elasticsearch.index_name)

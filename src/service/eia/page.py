@@ -4,6 +4,7 @@ from langchain_core.documents import Document
 from bs4 import BeautifulSoup
 from re import search
 from urllib.parse import urljoin, urlparse
+from datetime import datetime, timezone
 
 from logger import logger
 
@@ -12,9 +13,11 @@ from service.spider import SpiderService
 
 
 class PageMetadata:
+    url: str
     html: str
     content: str
     title: str
+    date: str
 
 
 class EIAPageService:
@@ -90,6 +93,18 @@ class EIAPageService:
                     metadata.content = content
                     break
 
+        metadata.date = datetime.now(timezone.utc).isoformat()
+        for selector in config.EIA.page_date_selector_priority:
+            ele = soup.select_one(selector)
+            if ele:
+                date_str = ele.get_text(separator="\n", strip=True)
+                if date_str:
+                    date_obj = datetime.strptime(date_str, "%b %d, %Y")
+                    date_obj_utc = date_obj.replace(tzinfo=timezone.utc)
+                    utc_str = date_obj_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
+                    metadata.date = utc_str
+                    break
+
         return metadata
 
     def extract_sub_url_set(self, html: str, base_url: str):
@@ -104,18 +119,19 @@ class EIAPageService:
         sub_url_set = set(sub_urls)
         return sub_url_set - self.cached_url_set
 
-    def store_page(self, url: str, metadata: PageMetadata):
+    def store_page(self, metadata: PageMetadata):
         doc = Document(
             page_content=metadata.content,
             metadata={
-                "url": url,
+                "url": metadata.url,
                 "html": metadata.html,
                 "title": metadata.title,
+                "date": metadata.date,
             },
         )
         # 删除旧文档
-        self.delete_url(url)
-        self.cached_url_set.add(url)
+        self.delete_url(metadata.url)
+        self.cached_url_set.add(metadata.url)
         return es_vector_store.add_documents([doc])
 
     # 验证url是否可爬取
@@ -162,7 +178,8 @@ class EIAPageService:
         if not metadata.content:
             logger.error(f"failed to extract content, skipped")
             return
-        ids = self.store_page(url=url, metadata=metadata)
+        metadata.url = url
+        ids = self.store_page(metadata=metadata)
         if len(ids) == 0:
             logger.error(f"failed to store into es")
             return
