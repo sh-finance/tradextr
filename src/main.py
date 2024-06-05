@@ -1,4 +1,7 @@
+import config
+
 import json
+
 from dto.entity.context import generate_markdown_references, sort_contexts
 from dto.entity.response import ParrotResponse
 from logger import logger
@@ -70,8 +73,6 @@ async def rag_handler(request: Request):
 
 if __name__ == "__main__":
     import uvicorn
-    import config
-
     from schedule import scheduler_run
 
     scheduler_run()
