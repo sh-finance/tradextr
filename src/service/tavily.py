@@ -41,5 +41,5 @@ def search(query: str, domains: list[str] = [], news=False):
     return [
         Context(title=res.get("title"), content=res.get("content"), link=res.get("url"))
         for res in results
-        if res.get("content")
+        if res.get("content") and res.get("score") >= 0.9
     ]

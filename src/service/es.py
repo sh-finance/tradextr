@@ -41,12 +41,14 @@ if not es.indices.exists(index=config.Elasticsearch.index_name):
 
 
 def search(query: str, k: int = config.Tavily.max_results) -> list[Context]:
-    docs = es_vector_store.similarity_search(query=query, k=k)
+    tuples = es_vector_store.similarity_search_with_relevance_scores(query=query, k=k)
+
     return [
         Context(
             content=doc.page_content,
             link=doc.metadata["url"],
             title=doc.metadata["title"],
         )
-        for doc in docs
+        for doc, score in tuples
+        if score >= 0.9
     ]
