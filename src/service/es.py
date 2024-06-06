@@ -40,8 +40,8 @@ if not es.indices.exists(index=config.Elasticsearch.index_name):
     es.indices.create(index=config.Elasticsearch.index_name, body=mappings)
 
 
-def search(query: str) -> list[Context]:
-    docs = es_vector_store.similarity_search(query)
+def search(query: str, k: int = config.Tavily.max_results) -> list[Context]:
+    docs = es_vector_store.similarity_search(query=query, k=k)
     return [
         Context(
             content=doc.page_content,
