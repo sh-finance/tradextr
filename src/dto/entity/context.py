@@ -51,5 +51,10 @@ def sort_contexts(contexts: list[Context]):
     return contexts
 
 
+def filter_contexts(contexts: list[Context], min_score=0, max_length=100):
+    contexts = [ctx for ctx in contexts if ctx.score >= min_score]
+    return contexts[0:max_length]
+
+
 def generate_markdown_references(contexts: list[Context]):
     return "\n".join([context.__ref__() for context in contexts])

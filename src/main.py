@@ -2,7 +2,11 @@ import config
 
 import json
 
-from dto.entity.context import generate_markdown_references, sort_contexts
+from dto.entity.context import (
+    filter_contexts,
+    generate_markdown_references,
+    sort_contexts,
+)
 from dto.entity.response import ParrotResponse
 from logger import logger
 from fastapi import FastAPI, Request
@@ -57,10 +61,9 @@ async def rag_handler(request: Request):
 
     # if len(contexts) < config.Tavily.max_results:
     tavily_results = tavily_search(query_with_context, news=bool(date_range.start))
-    contexts.extend(tavily_results[0 : config.Tavily.max_results - len(contexts)])
-
+    contexts.extend(tavily_results)
     contexts = sort_contexts(contexts)
-
+    contexts = filter_contexts(contexts)
     # logger.info("\n".join([context.__str__() for context in contexts]))
     logger.info("\n".join([json.dumps(context.__dict__()) for context in contexts]))
 
