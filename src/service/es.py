@@ -40,8 +40,12 @@ if not es.indices.exists(index=config.Elasticsearch.index_name):
     es.indices.create(index=config.Elasticsearch.index_name, body=mappings)
 
 
-def search(query: str, k: int = config.Tavily.max_results) -> list[Context]:
-    tuples = es_vector_store.similarity_search_with_relevance_scores(query=query, k=k)
+def search(
+    query: str, k: int = config.Tavily.max_results, startDate: str | None = None
+) -> list[Context]:
+    tuples = es_vector_store.similarity_search_with_relevance_scores(
+        query=query, k=k, filter=[{"range": {"metadata.date": {"gte": startDate}}}]
+    )
 
     return [
         Context(

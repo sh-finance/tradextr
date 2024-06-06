@@ -16,7 +16,7 @@ class KeywordsData(BaseModel):
 
 
 class DateRange(BaseModel):
-    """Date Range in  a sentence"""
+    """Date Range in a sentence, return None if not specified."""
 
     start: Optional[str] = Field(description="the start of date range")
     end: Optional[str] = Field(description="the end of date range")

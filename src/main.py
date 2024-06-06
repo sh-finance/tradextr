@@ -7,7 +7,7 @@ from dto.entity.response import ParrotResponse
 from logger import logger
 from fastapi import FastAPI, Request
 
-from util.determine_need_news import determine_need_news
+from util.extractor import extract_date_range
 from util.reformulate_as_separate_question import reformulate_as_separate_question
 from util.rag import rag
 
@@ -49,14 +49,14 @@ async def rag_handler(request: Request):
 
     logger.info("query_with_context: %s", query_with_context)
 
-    # need_news = determine_need_news(query=query_with_context)
-
     contexts = []
 
-    contexts = es_search(query_with_context)
+    date_range = extract_date_range(query=query_with_context)
+
+    contexts = es_search(query_with_context, startDate=date_range.start)
 
     # if len(contexts) < config.Tavily.max_results:
-    tavily_results = tavily_search(query_with_context)
+    tavily_results = tavily_search(query_with_context, news=bool(date_range.start))
     contexts.extend(tavily_results[0 : config.Tavily.max_results - len(contexts)])
 
     contexts = sort_contexts(contexts)
