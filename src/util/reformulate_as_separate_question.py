@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 from openai.types.chat import ChatCompletionMessageParam
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import StrOutputParser
@@ -45,4 +46,8 @@ def reformulate_as_separate_question(
 
     chain = prompt | llm | StrOutputParser()
 
-    return chain.invoke({"messages": json.dumps(messages)})
+    today = datetime.today()
+
+    return chain.invoke(
+        {"messages": json.dumps(messages), "current_date": today.strftime("%Y-%m-%d")}
+    )
