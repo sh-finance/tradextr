@@ -34,10 +34,11 @@ class Context:
             "content": self.content,
             "link": self.link,
             "source": self.source,
+            "score": self.score,
         }
 
     def __xml__(self):
-        return f"""<doc id="{self.index}" title="{self.title}" link="{self.link}" source="{self.source}">{self.content}</doc>"""
+        return f"""<doc id="{self.index}" title="{self.title}" link="{self.link.replace(' ', '%20')}" source="{self.source}" score="{self.score}">{self.content}</doc>"""
 
     def __ref__(self):
         return f"[\\[{self.index}\\]]: {self.link.replace(' ', '%20')}"

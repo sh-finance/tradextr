@@ -19,11 +19,14 @@ from util.reformulate_as_separate_question import reformulate_as_separate_questi
 from util.extractor import extract_keyword, extract_date_range
 from util.today import today
 
+
+# eia_page_service.recursive_fetch_and_store_page()
+
 # logger.info(extract_keyword("你能提供生物柴油最近的新闻吗"))
 
 # logger.info(today())
 
-logger.info(extract_date_range("生物柴油是什么"))
+# logger.info(extract_date_range("生物柴油是什么"))
 
 # determine_need_news("openai最新模型是什么")
 
