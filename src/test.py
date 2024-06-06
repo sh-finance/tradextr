@@ -18,6 +18,9 @@ from service.tavily import search as tavily_search
 from util.reformulate_as_separate_question import reformulate_as_separate_question
 from util.extractor import keywords_extractor
 from util.determine_need_news import determine_need_news
+from util.today import today
+
+logger.info(today())
 
 # determine_need_news("openai最新模型是什么")
 

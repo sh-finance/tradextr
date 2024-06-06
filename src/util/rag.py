@@ -1,5 +1,3 @@
-from datetime import date
-
 from langchain_core.prompts import PromptTemplate
 
 from langchain_core.output_parsers import StrOutputParser
@@ -11,6 +9,7 @@ from dto.entity.context import Context
 from service.openai import llm
 
 from util.extractor import keywords_extractor
+from util.today import today
 
 prompt_template = open("prompt/rag.md", "r").read()
 
@@ -26,7 +25,7 @@ def rag(messages: str, contexts: list[Context]):
         {
             "messages": messages,
             "context": context_str,
-            "current_date": date.today().isoformat(),
+            "current_date": today(),
         }
     )
 
