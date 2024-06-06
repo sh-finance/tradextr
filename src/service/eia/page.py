@@ -154,6 +154,7 @@ class EIAPageService:
             ".zip",
             ".mp3",
             ".csv",
+            ".ashx",
         ]
         for s in invalid_strs:
             if s in url:
