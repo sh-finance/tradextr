@@ -3,15 +3,19 @@ class Context:
     content: str
     link: str
     source: str
+    score: float
 
     index: int
 
-    def __init__(self, content="", link="", title="", source="", index=0) -> None:
+    def __init__(
+        self, content="", link="", title="", source="", score: float = 0, index=0
+    ) -> None:
         self.content = content
         self.link = link
         self.title = title
         self.source = source
         self.index = index
+        self.score = score
 
     def __str__(self) -> str:
         return f"[[{self.index}] {self.title or self.link}]({self.link.replace(' ', '%20')})"
@@ -40,6 +44,7 @@ class Context:
 
 
 def sort_contexts(contexts: list[Context]):
+    contexts.sort(key=lambda ctx: ctx.score, reverse=True)
     for i, ctx in enumerate(contexts):
         ctx.index = i + 1
     return contexts

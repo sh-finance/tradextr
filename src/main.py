@@ -55,9 +55,9 @@ async def rag_handler(request: Request):
 
     contexts = es_search(query_with_context)
 
-    if len(contexts) < config.Tavily.max_results:
-        tavily_results = tavily_search(query_with_context)
-        contexts.extend(tavily_results[0 : config.Tavily.max_results - len(contexts)])
+    # if len(contexts) < config.Tavily.max_results:
+    tavily_results = tavily_search(query_with_context)
+    contexts.extend(tavily_results[0 : config.Tavily.max_results - len(contexts)])
 
     contexts = sort_contexts(contexts)
 

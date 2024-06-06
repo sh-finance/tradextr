@@ -48,7 +48,7 @@ def search(query: str, k: int = config.Tavily.max_results) -> list[Context]:
             content=doc.page_content,
             link=doc.metadata["url"],
             title=doc.metadata["title"],
+            score=score,
         )
         for doc, score in tuples
-        if score >= 0.9
     ]
