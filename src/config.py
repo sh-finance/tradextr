@@ -14,6 +14,7 @@ class Logger:
 
 
 class Server:
+    mode = getenv("SERVER_MODE", "prod")
     app = "main:api"
     host = getenv("SERVER_HOST", "0.0.0.0")
     port = int(getenv("SERVER_PORT", 10000))

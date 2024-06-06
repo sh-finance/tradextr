@@ -75,7 +75,8 @@ if __name__ == "__main__":
     import uvicorn
     from schedule import scheduler_run
 
-    scheduler_run()
+    if config.Server.mode == "prod":
+        scheduler_run()
 
     logger.debug(config)
 
