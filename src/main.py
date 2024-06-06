@@ -49,14 +49,14 @@ async def rag_handler(request: Request):
 
     logger.info("query_with_context: %s", query_with_context)
 
-    need_news = determine_need_news(query=query_with_context)
+    # need_news = determine_need_news(query=query_with_context)
 
     contexts = []
 
     contexts = es_search(query_with_context)
 
     if len(contexts) < config.Tavily.max_results:
-        tavily_results = tavily_search(query_with_context, news=need_news)
+        tavily_results = tavily_search(query_with_context)
         contexts.extend(tavily_results[0 : config.Tavily.max_results - len(contexts)])
 
     contexts = sort_contexts(contexts)
