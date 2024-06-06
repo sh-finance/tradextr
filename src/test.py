@@ -17,10 +17,13 @@ from service.tavily import search as tavily_search
 
 from util.reformulate_as_separate_question import reformulate_as_separate_question
 from util.extractor import keywords_extractor
+from util.determine_need_news import determine_need_news
 
-chain = llm | StrOutputParser()
+# determine_need_news("openai最新模型是什么")
 
-eia_page_service.recursive_fetch_and_store_page()
+# chain = llm | StrOutputParser()
+
+# eia_page_service.recursive_fetch_and_store_page()
 
 # 拉取所有路由下的所有数据 存储到mongo
 # EiaAPIService.recursive_fetch_and_store_data()
