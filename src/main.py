@@ -61,6 +61,8 @@ async def rag_handler(request: Request):
 
     contexts = sort_contexts(contexts)
 
+    logger.info("\n".join([context.__str__() for context in contexts]))
+
     answer = rag(json.dumps(messages), contexts)
 
     ref = generate_markdown_references(contexts)
