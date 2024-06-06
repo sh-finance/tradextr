@@ -36,7 +36,7 @@ class Context:
         return f"""<doc id="{self.index}" title="{self.title}" link="{self.link}" source="{self.source}">{self.content}</doc>"""
 
     def __ref__(self):
-        return f"[\\[{self.index}\\]]: {self.link}"
+        return f"[\\[{self.index}\\]]: {self.link.replace(' ', '%20')}"
 
 
 def sort_contexts(contexts: list[Context]):
