@@ -16,11 +16,14 @@ from service.mongo import mongo
 from service.tavily import search as tavily_search
 
 from util.reformulate_as_separate_question import reformulate_as_separate_question
-from util.extractor import keywords_extractor
-from util.determine_need_news import determine_need_news
+from util.extractor import extract_keyword, extract_date_range
 from util.today import today
 
-logger.info(today())
+logger.info(extract_keyword("你能提供生物柴油最近的新闻吗"))
+
+# logger.info(today())
+
+logger.info(extract_date_range("你能提供生物柴油最近的新闻吗"))
 
 # determine_need_news("openai最新模型是什么")
 
