@@ -22,7 +22,7 @@ mappings = {
     "mappings": {
         "properties": {
             "text": {"type": "text"},
-            "vector": {"type": "float"},
+            "vector": {"type": "dense_vector"},
             "metadata": {
                 "type": "nested",
                 "properties": {
