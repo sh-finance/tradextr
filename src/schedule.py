@@ -16,7 +16,8 @@ def eia_page():
         logger.error(e)
     finally:
         eia_page_service.reload_cached_url_set()
-        scheduler.enter(60 * 60, 1, eia_page)
+        # 每天一次
+        scheduler.enter(60 * 60 * 24, 1, eia_page)
 
 
 scheduler.enter(0, 1, eia_page)
