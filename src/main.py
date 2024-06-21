@@ -82,10 +82,10 @@ async def rag_handler(request: Request):
 
 if __name__ == "__main__":
     import uvicorn
-    from schedule import scheduler_run
+    # from schedule import scheduler_run
 
-    if config.Server.mode == "prod":
-        scheduler_run()
+    # if config.Server.mode == "prod":
+    #     scheduler_run()
 
     logger.debug(config)
 
